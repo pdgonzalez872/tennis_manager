@@ -3,8 +3,12 @@ The idea is to do bookeeping for a tournament. Here is an example of a [draw](pu
 Trello Board: https://trello.com/b/gvjKJX0V/tennisplanner
 
 ### Main idea:
-A tournament has draws.
+A tournament has draws and locations.
+
 Draws have slots.
+
 Matches fills the draw slots.
+
 Matches have teams (paddle is always played in doubles).
+
 Teams have players.
