@@ -1,0 +1,11 @@
+Tournament show page
+
+<br>
+<br>
+<br>
+
+<h3>Here are the draws for this tournament</h3>
+
+<% @tournament.draws.each do |d| %>
+  <%= link_to "#{d.name}", draw_path(d) %>
+<% end %>
