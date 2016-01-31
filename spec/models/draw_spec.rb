@@ -8,18 +8,8 @@ RSpec.describe Draw, type: :model do
   end
 
   context "Associations" do
-    it "belongs to a tournament" do
-      tournament = Tournament.create(name:     "Roland Garros",
-                                     location: "Paris, France")
-      tournament.draws << draw
-      result         = tournament.draws.count
 
-      expect(result).to eq 1
-    end
-
-    xit "has many matches" do
-      
-    end
+    it { should belong_to(:tournament) }
 
   end
 end
