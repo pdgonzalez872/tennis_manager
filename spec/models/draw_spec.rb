@@ -8,8 +8,8 @@ RSpec.describe Draw, type: :model do
   end
 
   context "Associations" do
-
     it { should belong_to(:tournament) }
-
+    it { should have_many(:matches) }
+    it { should have_many(:draw_positions) }
   end
 end

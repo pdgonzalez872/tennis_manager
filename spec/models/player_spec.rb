@@ -8,6 +8,6 @@ RSpec.describe Player, type: :model do
   end
 
   context "Associations" do
-    it { should belong_to(:match) }
+    it { should belong_to(:draw_position) }
   end
 end

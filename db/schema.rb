@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131150309) do
+ActiveRecord::Schema.define(version: 20160131160206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "draw_positions", force: :cascade do |t|
+    t.integer  "match_id"
+    t.integer  "draw_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "draws", force: :cascade do |t|
     t.string   "name"
@@ -45,9 +52,10 @@ ActiveRecord::Schema.define(version: 20160131150309) do
     t.string   "name"
     t.string   "email"
     t.string   "phone_number"
-    t.integer  "match_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "current_draw_position"
+    t.integer  "draw_position_id"
   end
 
   create_table "static_pages", force: :cascade do |t|

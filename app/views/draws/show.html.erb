@@ -4,5 +4,5 @@ draw show page for <%= @draw.name %>
 <br>
 
 <% @draw.matches.each do |m| %>
-  <%= m %>
+  <%= render partial: "matches/match" %>
 <% end %>
