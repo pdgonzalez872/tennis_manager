@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20160131022334) do
 
   create_table "tournaments", force: :cascade do |t|
     t.string   "name"
-    t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
