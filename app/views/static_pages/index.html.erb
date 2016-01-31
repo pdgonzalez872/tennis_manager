@@ -3,3 +3,7 @@ Hi from static pages index. This is the main page for now
 <br>
 <br>
 <br>
+
+<% @tournaments.each do |t| %>
+  <%= t.name %>
+<% end %>

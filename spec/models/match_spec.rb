@@ -9,6 +9,6 @@ RSpec.describe Match, type: :model do
 
   context "Associations" do
     it { should belong_to(:draw) }
-    # it { should have_many(:players) }
+    it { should have_many(:players) }
   end
 end
