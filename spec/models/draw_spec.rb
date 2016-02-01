@@ -56,9 +56,5 @@ RSpec.describe Draw, type: :model do
         end
       end
     end
-
-    # it "creates final with the correct draw_positions" do
-    #   expect(draw.matches)
-    # end
   end
 end
