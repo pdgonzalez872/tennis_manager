@@ -44,6 +44,9 @@ RSpec.describe Draw, type: :model do
       end
 
       context "First match for seed #2" do
+        it "creates the match in the correct round" do
+          expect(match.name).to eq "sixty_four"
+        end
         it "creates the correct draw_positions for the match" do
           first = match.draw_positions.first
           last = match.draw_positions.last
