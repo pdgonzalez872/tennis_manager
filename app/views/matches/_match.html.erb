@@ -1,8 +1,13 @@
-<ul>
-  <li>
-    <% unless match.players.empty?%>
-      <%= match.players.first.name %>
-      <%= match.players.last.name %>
-    <% end %>
-  </li>
-</ul>
+<% unless match.players.empty? %>
+  <li class="game game-top"> <%= match.players.first.name %> <span> </span></li>
+  <li class="game game-spacer">&nbsp;</li>
+  <li class="game game-bottom "> <%= match.players.last.name %> <span> </span></li>
+
+  <li class="spacer">&nbsp;</li>
+<% else %>
+  <li class="game game-top">  <span> </span></li>
+  <li class="game game-spacer">&nbsp;</li>
+  <li class="game game-bottom "> <span> </span></li>
+
+  <li class="spacer">&nbsp;</li>
+<% end %>
