@@ -5,43 +5,13 @@ draw show page for <%= @draw.name %>
 
 <h1><%= @draw.name %></h1>
 <main id="tournament">
+  <%= render partial: "draw_matches", locals: {draw: @draw, round_name: "sixty_four"} %>
 
-  <ul class="round round-1">
-    <li class="spacer">&nbsp;</li>
+  <%= render partial: "draw_matches", locals: {draw: @draw, round_name: "oitavas"} %>
 
-    <% @draw.matches.round("sixty_four").each do |m| %>
-      <%= render partial: "matches/match", locals: {match: m} %>
-    <% end %>
+  <%= render partial: "draw_matches", locals: {draw: @draw, round_name: "quarters"} %>
 
-	</ul>
+  <%= render partial: "draw_matches", locals: {draw: @draw, round_name: "semis"} %>
 
-	<ul class="round round-1">
-		<li class="spacer">&nbsp;</li>
-
-    <% @draw.matches.round("oitavas").each do |m| %>
-      <%= render partial: "matches/match", locals: {match: m} %>
-    <% end %>
-	</ul>
-	<ul class="round round-2">
-		<li class="spacer">&nbsp;</li>
-
-    <% @draw.matches.round("quarters").each do |m| %>
-      <%= render partial: "matches/match", locals: {match: m} %>
-    <% end %>
-
-	</ul>
-	<ul class="round round-3">
-		<li class="spacer">&nbsp;</li>
-
-    <% @draw.matches.round("semis").each do |m| %>
-      <%= render partial: "matches/match", locals: {match: m} %>
-    <% end %>
-	</ul>
-	<ul class="round round-4">
-		<li class="spacer">&nbsp;</li>
-
-    <% @draw.matches.round("final").each do |m| %>
-      <%= render partial: "matches/match", locals: {match: m} %>
-    <% end %>
-	</ul>
+  <%= render partial: "draw_matches", locals: {draw: @draw, round_name: "final"} %>
 </main>
