@@ -41,11 +41,7 @@ class Draw < ActiveRecord::Base
                "sixty_four" => (32..63) }
 
     rounds.each do |k,v|
-      if k == "champion"
-        create_champion_position
-      else
-        create_matches_and_draw_positions(rounds["#{k}"], "#{k}")
-      end
+      k == "champion" ? create_champion_position : create_matches_and_draw_positions(rounds["#{k}"], "#{k}")
     end
   end
 
