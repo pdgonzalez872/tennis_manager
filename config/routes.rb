@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :draws
   resources :matches
   resources :locations
+  resources :players
 end

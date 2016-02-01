@@ -1,9 +1,4 @@
-draw show page for <%= @draw.name %>
-
-<br>
-<br>
-
-<h1><%= @draw.name %></h1>
+<h1> <%= @draw.tournament.name %> - <%= @draw.name %></h1>
 <main id="tournament">
   <%= render partial: "draw_matches", locals: {draw: @draw, round_name: "sixty_four"} %>
 
