@@ -42,20 +42,7 @@ class Draw < ActiveRecord::Base
 
     create_champion_position
 
-    # create finals
-    rounds["final"].step(2) do |t|
-      ct = self.draw_positions.count
-      m = Match.create!(match_number: 1, name: 'final')
-      self.matches << m
-
-      dp1 = DrawPosition.create!(draw_positions_number: m.match_number * 2)
-      m.draw_positions << dp1
-      self.draw_positions << dp1
-
-      dp2 = DrawPosition.create!(draw_positions_number: m.match_number * 2 + 1)
-      m.draw_positions << dp2
-      self.draw_positions << dp2
-    end
+    create_matches_and_draw_positions(rounds['final'], 'final')
 
     create_matches_and_draw_positions(rounds['semis'], "semis")
 
@@ -64,8 +51,6 @@ class Draw < ActiveRecord::Base
     create_matches_and_draw_positions(rounds['oitavas'], 'oitavas')
 
     create_matches_and_draw_positions(rounds['sixty_four'], 'sixty_four')
-
-
   end
 
   def create_matches_and_draw_positions(starting_point, name)
