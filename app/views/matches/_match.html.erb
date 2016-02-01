@@ -1,1 +1,8 @@
-YEAH YEAH PARTIAL <%= match.name %>
+<ul>
+  <li>
+    <% unless match.players.empty?%>
+      <%= match.players.first.name %>
+      <%= match.players.last.name %>
+    <% end %>
+  </li>
+</ul>

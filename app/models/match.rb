@@ -4,4 +4,8 @@ class Match < ActiveRecord::Base
 
   belongs_to :location
   belongs_to :draw
+
+  def self.round(round_name)
+    Match.where(name: "#{round_name}")
+  end
 end
