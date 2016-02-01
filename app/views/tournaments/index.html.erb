@@ -1,0 +1,9 @@
+tournaments index
+
+<br>
+<br>
+<br>
+
+<% @tournaments.each do |t| %>
+  <%= link_to "#{t.name}", tournament_path(t) %>
+<% end %>

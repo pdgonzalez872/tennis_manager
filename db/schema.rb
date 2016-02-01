@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131022334) do
+ActiveRecord::Schema.define(version: 20160201012018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "draw_positions", force: :cascade do |t|
+    t.integer  "match_id"
+    t.integer  "draw_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "draw_positions_number"
+  end
 
   create_table "draws", force: :cascade do |t|
     t.string   "name"
@@ -24,9 +32,31 @@ ActiveRecord::Schema.define(version: 20160131022334) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "matches", force: :cascade do |t|
+  create_table "locations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "address"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer  "draw_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "location_id"
+    t.datetime "time"
+    t.integer  "match_number"
+    t.string   "name"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "current_draw_position"
+    t.integer  "draw_position_id"
   end
 
   create_table "static_pages", force: :cascade do |t|
