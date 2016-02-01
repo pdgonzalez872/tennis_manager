@@ -4,10 +4,11 @@ class Draw < ActiveRecord::Base
 
   has_many :matches
   has_many :draw_positions
+  has_many :players, through: :draw_positions
 
   belongs_to :tournament
 
-  private
+  # private
 
   def draw_positions_count
       (2 * self.size) - 1
@@ -27,51 +28,63 @@ class Draw < ActiveRecord::Base
   def create_draw_structure
 
     # TODO: refactor this for a programmatic solution
-    rounds = { "final"      => (2..3),
+    # loop with conditions on the keys,
+      # if champion, call champion method
+      # elsif final, call final
+      # else create_matches_and_draw_positions
+
+    rounds = { "champion"   => 1,
+               "final"      => (2..3),
                "semis"      => (4..7),
                "quarters"   => (8..15),
                "oitavas"    => (16..31),
-               "sixty_four" => (32..61) }
+               "sixty_four" => (32..63) }
 
-    # create champion position - just a DrawPosition of #1
     create_champion_position
 
     # create finals
     rounds["final"].step(2) do |t|
       ct = self.draw_positions.count
-      m = Match.create!(match_number: t/2)
+      m = Match.create!(match_number: 1, name: 'final')
       self.matches << m
 
-      dp1 = DrawPosition.create!(draw_positions_number: ct)
+      dp1 = DrawPosition.create!(draw_positions_number: m.match_number * 2)
       m.draw_positions << dp1
       self.draw_positions << dp1
 
-      dp2 = DrawPosition.create!(draw_positions_number: ct + 1)
+      dp2 = DrawPosition.create!(draw_positions_number: m.match_number * 2 + 1)
       m.draw_positions << dp2
       self.draw_positions << dp2
     end
 
-    # create_matches_and_draw_positions(semis)
+    create_matches_and_draw_positions(rounds['semis'], "semis")
 
-    # create quarters
+    create_matches_and_draw_positions(rounds['quarters'], 'quarters')
 
-    # create oitavas
+    create_matches_and_draw_positions(rounds['oitavas'], 'oitavas')
+
+    create_matches_and_draw_positions(rounds['sixty_four'], 'sixty_four')
+
 
   end
 
-  def create_matches_and_draw_positions(starting_point)
-    starting_point.step(2) do |t|
-      ct = self.draw_positions.count
-      m = Match.create!(match_number: t/2)
-      self.matches << m
+  def create_matches_and_draw_positions(starting_point, name)
+    starting_point.each do |t|
+      if t.even?
+        ct = self.draw_positions.count
+        m = Match.create!(match_number: t/2, name: name)
+        self.matches << m
 
-      dp1 = DrawPosition.create!(draw_positions_number: ct/2)
-      m.draw_positions << dp1
-      self.draw_positions << dp1
+        dp1 = DrawPosition.create!(draw_positions_number: m.match_number * 2)
+        m.draw_positions << dp1
+        self.draw_positions << dp1
 
-      dp2 = DrawPosition.create!(draw_positions_number: ct/2 + 1)
-      m.draw_positions << dp2
-      self.draw_positions << dp2
+        dp2 = DrawPosition.create!(draw_positions_number: m.match_number * 2 + 1)
+        m.draw_positions << dp2
+        self.draw_positions << dp2
+      else
+        next
+      end
     end
   end
 
