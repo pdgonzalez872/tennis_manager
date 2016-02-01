@@ -8,7 +8,7 @@ class Draw < ActiveRecord::Base
 
   belongs_to :tournament
 
-  # private
+  private
 
   def draw_positions_count
       (2 * self.size) - 1
