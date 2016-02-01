@@ -26,13 +26,6 @@ class Draw < ActiveRecord::Base
   end
 
   def create_draw_structure
-
-    # TODO: refactor this for a programmatic solution
-    # loop with conditions on the keys,
-      # if champion, call champion method
-      # elsif final, call final
-      # else create_matches_and_draw_positions
-
     rounds = { "champion"   => 1,
                "final"      => (2..3),
                "semis"      => (4..7),
