@@ -40,17 +40,13 @@ class Draw < ActiveRecord::Base
                "oitavas"    => (16..31),
                "sixty_four" => (32..63) }
 
-    create_champion_position
-
-    create_matches_and_draw_positions(rounds['final'], 'final')
-
-    create_matches_and_draw_positions(rounds['semis'], "semis")
-
-    create_matches_and_draw_positions(rounds['quarters'], 'quarters')
-
-    create_matches_and_draw_positions(rounds['oitavas'], 'oitavas')
-
-    create_matches_and_draw_positions(rounds['sixty_four'], 'sixty_four')
+    rounds.each do |k,v|
+      if k == "champion"
+        create_champion_position
+      else
+        create_matches_and_draw_positions(rounds["#{k}"], "#{k}")
+      end
+    end
   end
 
   def create_matches_and_draw_positions(starting_point, name)
