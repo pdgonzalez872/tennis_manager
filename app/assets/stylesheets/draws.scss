@@ -1,3 +1,6 @@
+// good resource to look into:
+// http://www.pdfonline.com/convert-pdf-to-html/
+
 // Source: http://codepen.io/aronduby/pen/qliuj
 main{
   display:flex;
@@ -46,8 +49,31 @@ li.game{
   li.game-spacer{
     border-right:1px solid #aaa;
     min-height:40px;
+    text-align: center;
   }
+
+  li.game-spacer-top{
+    border-right:1px solid #aaa;
+    min-height:20px;
+    text-align: center;
+  }
+  li.game-spacer-bottom{
+    border-right:1px solid #aaa;
+    min-height:1px;
+    text-align: center;
+  }
+
 
   li.game-bottom{
     border-top:1px solid #aaa;
   }
+
+// other stuff
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  color: hotpink;
+}
