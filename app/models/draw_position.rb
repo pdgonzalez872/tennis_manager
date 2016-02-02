@@ -1,5 +1,5 @@
 class DrawPosition < ActiveRecord::Base
-  has_one :player
+  has_many :player
 
   belongs_to :match
   belongs_to :draw

@@ -7,15 +7,16 @@ class DrawPositionsController < ApplicationController
   end
 
   def update
-    byebug
     dp = DrawPosition.find_by(id: params[:id])
-    dp.player = Player.find_by(name: params[:draw_position][:player])
+    player = Player.find_by(name: params[:draw_position][:player])
 
-    # if dp.save?
-    #   redirect_to
-    # else
-    #
-    # end
+    if dp.player = player
+      dp.match.players << player
+      redirect_to tournament_draw_path(tournament_id: dp.draw.tournament.id,
+                                       id: dp.draw.id)
+    else
+      render "edit"
+    end
     # find the player with the name that is passed, thenif save redirect
   end
 
