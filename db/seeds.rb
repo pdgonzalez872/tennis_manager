@@ -44,5 +44,5 @@ player_hash = Hash[player_array.zip position_range]
 player_hash.each do |k, v|
   d = DrawPosition.find_by(draw_positions_number: v)
   player = Player.create!(name: k)
-  d.player = player
+  d.player << player
 end
