@@ -9,7 +9,7 @@ RSpec.describe DrawPosition, type: :model do
   end
 
   context "Associations" do
-    it { should have_many(:player) }
+    it { should have_many(:players) }
     it { should belong_to(:draw) }
     it { should belong_to(:match) }
   end

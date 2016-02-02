@@ -20,8 +20,8 @@ class Draw < ActiveRecord::Base
 
   def self.fetch_player_options(draw_position)
     player_options = {
-        player1: DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2).player,
-        player2: DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2 + 1).player }
+        player1: DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2).players.first,
+        player2: DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2 + 1).players.first }
   end
 
   private

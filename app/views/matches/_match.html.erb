@@ -1,9 +1,9 @@
-<% unless match.players.empty? %>
-  <li class="game game-top"> <%= link_to "#{match.draw_positions.first.player.name}", player_path(match.players.first.name) %> <span> WN </span></li>
-  <li class="game game-spacer">hi </li>
-  <li class="game game-bottom "> <%= link_to "#{mmatch.draw_positions.last.player.name}", player_path(match.players.last.name) %> <span> 3:00 </span></li>
 
-  <li class="spacer">&nbsp;</li>
+<!-- This here is the problem. Must iterate through draw positions. -->
+<% unless match.players.empty? %>
+
+  <%= render partial: "draw_positions/draw_position", locals: {match: match, dps: match.draw_positions} %>
+
 <% else %>
 
   <li class="game game-top"> <%= link_to "Add Winner", edit_tournament_draw_draw_position_path(id: match.draw_positions.first, draw_id: match.draw.id) %> <span> WN </span></li>

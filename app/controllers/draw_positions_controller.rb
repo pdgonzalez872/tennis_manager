@@ -8,10 +8,10 @@ class DrawPositionsController < ApplicationController
 
   def update
     dp = DrawPosition.find_by(id: params[:id])
-    player = Player.find_by(name: params[:draw_position][:player])
+    player = Player.find_by(name: params[:draw_position][:players])
+    match = Match.find_by(id: dp.match.id)
 
-    if dp.player = player
-      dp.match.players << player
+    if dp.players << player
       redirect_to tournament_draw_path(tournament_id: dp.draw.tournament.id,
                                        id: dp.draw.id)
     else

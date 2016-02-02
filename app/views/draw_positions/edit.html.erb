@@ -6,6 +6,6 @@
 
 <%= form_for [@dp.draw.tournament, @dp.draw, @dp] do |f| %>
   <%= f.label "Who won this match?"%>
-  <%= f.select :player, [@player_options[:player1].name, @player_options[:player2].name] %>
+  <%= f.select :players, [@player_options[:player1].name, @player_options[:player2].name] %>
   <%= f.submit %>
 <% end %>
