@@ -8,6 +8,16 @@ class Draw < ActiveRecord::Base
 
   belongs_to :tournament
 
+  def self.has_adjacent_player?(draw_position)
+    dp1 = DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2).player.nil?
+    dp2 = DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2 + 1).player.nil?
+
+    if dp1 && dp2
+      return false
+    end
+    true
+  end
+
   private
 
   def draw_positions_count

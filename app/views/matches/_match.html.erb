@@ -7,9 +7,10 @@
 
   <li class="spacer">&nbsp;</li>
 <% else %>
-  <li class="game game-top">  <span> WN </span></li>
-  <li class="game game-spacer"> Move Player </li>
-  <li class="game game-bottom "> <span> 3:00 </span></li>
+    
+  <li class="game game-top"> <%= link_to "Add Winner", edit_draw_position_path(match.draw_positions.first) %> <span> WN </span></li>
+  <li class="game game-spacer">  </li>
+  <li class="game game-bottom "> <%= link_to "Add Winner", edit_draw_position_path(match.draw_positions.first) %> <span> 3:00 </span></li>
 
   <li class="spacer">&nbsp;</li>
 <% end %>

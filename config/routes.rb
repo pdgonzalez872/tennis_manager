@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :matches
   resources :locations
   resources :players
+  resources :draw_positions
 end
