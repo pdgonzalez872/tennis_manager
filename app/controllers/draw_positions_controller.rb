@@ -8,7 +8,7 @@ class DrawPositionsController < ApplicationController
 
   def update
     dp = DrawPosition.find_by(id: params[:id])
-    player = Player.find_by(name: params[:draw_position][:players])
+    player = Player.find_by(name: params[:draw_position][:winner])
     match = Match.find_by(id: dp.match.id)
 
     if dp.players << player

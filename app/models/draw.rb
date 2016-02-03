@@ -8,15 +8,20 @@ class Draw < ActiveRecord::Base
 
   belongs_to :tournament
 
-  def self.has_adjacent_players?(draw_position)
-    dp1 = DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2).player.nil?
-    dp2 = DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2 + 1).player.nil?
+  def self.match_has_adjacent_players?(draw_position)
+    dp1 = DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2).players.first.nil?
+    dp2 = DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2 + 1).players.first.nil?
 
     if dp1 && dp2
       return false
     end
     true
   end
+
+  # TODO Refactor Draw.match_has_adjacent_players?(match.draw_positions.first) || Draw.match_has_adjacent_players?(match.draw_positions.last) %>
+  # def self.match_needs_winner?(match)
+  #   self.match_has_adjacent_players()
+  # end
 
   def self.fetch_player_options(draw_position)
     player_options = {

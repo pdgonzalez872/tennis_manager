@@ -1,29 +1,15 @@
 
+<% if match.players.count == 2 %>
+  <%= render partial: "draw_positions/show_both_players", locals: { match: match }%>
 
+<% elsif match.players.count == 1 %>
+  <%= render partial: "draw_positions/show_player", locals: { match: match } %>
 
-<!-- iterate through both dps for match -->
-
-<!-- if has player, show player -->
-  <!-- render player -->
-<!-- <%= render partial: "draw_positions/draw_position", locals: {match: match} %> -->
-<!-- if has sibling, let add -->
-  <!-- add winner -->
-<!-- nothing, show nothing -->
-  <!-- <%= render partial: "draw_positions/show_nothing" %> -->
-
-<% unless match.players.empty? %>
-
-  <li class="game game-top"> <%= link_to "#{match.players.first.name}", player_path(match.players.first.name) %> <span> WN </span></li>
-  <li class="game game-spacer">hi </li>
-  <li class="game game-bottom "> <%= link_to "#{match.players.last.name}", player_path(match.players.last.name) %> <span> 3:00 </span></li>
+<% elsif Draw.match_has_adjacent_players?(match.draw_positions.first) || Draw.match_has_adjacent_players?(match.draw_positions.last) %>
+  <%= render partial: "draw_positions/add_winner", locals: { match: match } %>
 
 <% else %>
-
-  <li class="game game-top"> <%= link_to "Add Winner", edit_tournament_draw_draw_position_path(id: match.draw_positions.first, draw_id: match.draw.id) %> <span> WN </span></li>
-  <li class="game game-spacer">  </li>
-  <li class="game game-bottom "> <%= link_to "Add Winner", edit_tournament_draw_draw_position_path(id: match.draw_positions.second, draw_id: match.draw.id) %> <span> 3:00 </span></li>
-
-
+  <%= render partial: "draw_positions/show_nothing" %>
 <% end %>
 
 <li class="spacer">&nbsp;</li>

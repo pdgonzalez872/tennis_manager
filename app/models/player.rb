@@ -1,3 +1,4 @@
 class Player < ActiveRecord::Base
-  belongs_to :draw_position
+  has_many :draw_positions_players
+  has_many :draw_positions, through: :draw_positions_players
 end
