@@ -1,1 +1,15 @@
-YEAH YEAH PARTIAL <%= match.name %>
+
+<% if match.players.count == 2 %>
+  <%= render partial: "draw_positions/show_both_players", locals: { match: match }%>
+
+<% elsif match.players.count == 1 %>
+  <%= render partial: "draw_positions/show_player", locals: { match: match } %>
+
+<% elsif Draw.match_has_adjacent_players?(match.draw_positions.first) && Draw.match_has_adjacent_players?(match.draw_positions.last) %>
+  <%= render partial: "draw_positions/add_winner", locals: { match: match } %>
+
+<% else %>
+  <%= render partial: "draw_positions/show_nothing" %>
+<% end %>
+
+<li class="spacer">&nbsp;</li>

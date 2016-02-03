@@ -1,0 +1,19 @@
+
+
+<!-- there is only one player in this match -->
+
+<!-- look at which draw position -->
+
+<% if match.draw_positions.first.players.any? %>
+  <li class="game game-top"> <%= link_to "#{match.draw_positions.first.players.first.name}", player_path(match.draw_positions.first.players.first.name) %> <span> WN </span></li>
+  <li class="game game-spacer">  </li>
+  <li class="game game-bottom "> <%= link_to "Add Winner", edit_tournament_draw_draw_position_path(id: match.draw_positions.second, draw_id: match.draw.id) %> <span> 3:00 </span></li>
+<% else %>
+  <li class="game game-top"> <%= link_to "Add Winner", edit_tournament_draw_draw_position_path(id: match.draw_positions.first, draw_id: match.draw.id) %> <span> WN </span></li>
+  <li class="game game-spacer">  </li>
+  <li class="game game-bottom "> <%= link_to "#{match.draw_positions.last.players.first.name}", player_path(match.draw_positions.last.players.first.name) %> <span> 3:00 </span></li>
+<% end %>
+
+<!-- display the one that has the player -->
+
+<!-- allow other to display add player -->

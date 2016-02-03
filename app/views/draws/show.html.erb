@@ -1,8 +1,12 @@
-draw show page for <%= @draw.name %>
-<br>
-<br>
-<br>
+<h1> <%= @draw.tournament.name %> - <%= @draw.name %></h1>
+<main id="tournament">
+  <%= render partial: "draw_matches", locals: {draw: @draw, round_name: "sixty_four"} %>
 
-<% @draw.matches.each do |m| %>
-  <%= render partial: "matches/match", locals: {match: m} %>
-<% end %>
+  <%= render partial: "draw_matches", locals: {draw: @draw, round_name: "oitavas"} %>
+
+  <%= render partial: "draw_matches", locals: {draw: @draw, round_name: "quarters"} %>
+
+  <%= render partial: "draw_matches", locals: {draw: @draw, round_name: "semis"} %>
+
+  <%= render partial: "draw_matches", locals: {draw: @draw, round_name: "final"} %>
+</main>

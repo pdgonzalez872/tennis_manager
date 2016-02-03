@@ -44,11 +44,5 @@ player_hash = Hash[player_array.zip position_range]
 player_hash.each do |k, v|
   d = DrawPosition.find_by(draw_positions_number: v)
   player = Player.create!(name: k)
-  d.player = player
-  # player.draw_position_id = d.id
-  # player.current_draw_position = d.id
-  # player.save
-  # d.player = player
-
-  # p "#{k} ----- #{v}"
+  d.players << player
 end
