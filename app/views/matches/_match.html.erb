@@ -1,8 +1,21 @@
 
-<!-- This here is the problem. Must iterate through draw positions. -->
+
+
+<!-- iterate through both dps for match -->
+
+<!-- if has player, show player -->
+  <!-- render player -->
+<!-- <%= render partial: "draw_positions/draw_position", locals: {match: match} %> -->
+<!-- if has sibling, let add -->
+  <!-- add winner -->
+<!-- nothing, show nothing -->
+  <!-- <%= render partial: "draw_positions/show_nothing" %> -->
+
 <% unless match.players.empty? %>
 
-  <%= render partial: "draw_positions/draw_position", locals: {match: match, dps: match.draw_positions} %>
+  <li class="game game-top"> <%= link_to "#{match.players.first.name}", player_path(match.players.first.name) %> <span> WN </span></li>
+  <li class="game game-spacer">hi </li>
+  <li class="game game-bottom "> <%= link_to "#{match.players.last.name}", player_path(match.players.last.name) %> <span> 3:00 </span></li>
 
 <% else %>
 
@@ -10,5 +23,7 @@
   <li class="game game-spacer">  </li>
   <li class="game game-bottom "> <%= link_to "Add Winner", edit_tournament_draw_draw_position_path(id: match.draw_positions.second, draw_id: match.draw.id) %> <span> 3:00 </span></li>
 
-  <li class="spacer">&nbsp;</li>
+
 <% end %>
+
+<li class="spacer">&nbsp;</li>
