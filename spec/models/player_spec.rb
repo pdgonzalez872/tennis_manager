@@ -8,6 +8,6 @@ RSpec.describe Player, type: :model do
   end
 
   context "Associations" do
-    it { should belong_to(:draw_position) }
+    it { should have_many(:draw_positions) }
   end
 end

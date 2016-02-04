@@ -8,6 +8,8 @@ class Draw < ActiveRecord::Base
 
   belongs_to :tournament
 
+  attr_accessor :complete?
+
   def self.match_has_adjacent_players?(draw_position)
     dp1 = DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2).players.first.nil?
     dp2 = DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2 + 1).players.first.nil?
@@ -27,6 +29,16 @@ class Draw < ActiveRecord::Base
     player_options = {
         player1: DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2).players.first,
         player2: DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2 + 1).players.first }
+  end
+
+  def self.finals?(draw)
+    m = self.matches.find_by(name: "final")
+    # if m
+  end
+
+  # TODO
+  def self.ongoing_matches(draw)
+    # get all the non-complete matches.
   end
 
   private
