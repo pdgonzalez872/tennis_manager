@@ -62,7 +62,6 @@ class Draw < ActiveRecord::Base
   def create_matches_and_draw_positions(starting_point, name)
     starting_point.each do |t|
       if t.even?
-        ct = self.draw_positions.count
         m = Match.create!(match_number: t/2, name: name)
         self.matches << m
 
