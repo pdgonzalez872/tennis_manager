@@ -12,10 +12,12 @@ class DrawPositionsController < ApplicationController
     dp = DrawPosition.find_by(id: params[:id])
     player = Player.find_by(name: params[:draw_position][:winner])
 
-    previous_match = Match.find_by(match_number: params[:id])
-    previous_match.winner=(player.id)
-    previous_match.calculate_loser
-    previous_match.save
+    # This messed up my draw. Bad, bad design.
+    # previous_match = Match.find_by(match_number: params[:id])
+    # previous_match.update_winner_loser_and_save(player_id: player.id)
+    # previous_match.winner=(player.id)
+    # previous_match.calculate_loser
+    # previous_match.save
 
     if dp.players << player
       redirect_to tournament_draw_path(tournament_id: dp.draw.tournament.id,

@@ -5,17 +5,23 @@ class Match < ActiveRecord::Base
   belongs_to :location
   belongs_to :draw
 
-  def winner=(player_id)
-    self.winner_id = player_id
+  def winner
+    Player.find_by(id: self.winner_id)
   end
 
-  def winner
-    player = Player.find_by(self.winner_id)
+  def loser
+    Player.find_by(id: self.loser_id)
   end
 
   def calculate_loser
     loser = self.players.select { |player| player.id != self.winner_id }
     self.loser_id = loser[0].id
+  end
+
+  def update_winner_loser_and_save(player_id:)
+    self.winner_id = player_id
+    self.calculate_loser
+    self.save
   end
 
   def self.round(round_name)
