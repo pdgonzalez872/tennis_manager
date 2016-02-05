@@ -1,5 +1,7 @@
 class Draw < ActiveRecord::Base
 
+  # attr_accessor :complete?
+
   before_create :create_draw_structure
 
   has_many :matches
@@ -7,8 +9,6 @@ class Draw < ActiveRecord::Base
   has_many :players, through: :draw_positions
 
   belongs_to :tournament
-
-  attr_accessor :complete?
 
   def self.match_has_adjacent_players?(draw_position)
     dp1 = DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2).players.first.nil?
