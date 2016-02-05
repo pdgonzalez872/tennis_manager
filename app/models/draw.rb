@@ -1,5 +1,7 @@
 class Draw < ActiveRecord::Base
 
+  # attr_accessor :complete?
+
   before_create :create_draw_structure
 
   has_many :matches
@@ -27,6 +29,16 @@ class Draw < ActiveRecord::Base
     player_options = {
         player1: DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2).players.first,
         player2: DrawPosition.find_by(draw_positions_number: draw_position.draw_positions_number * 2 + 1).players.first }
+  end
+
+  def self.finals?(draw)
+    m = self.matches.find_by(name: "final")
+    # if m
+  end
+
+  # TODO
+  def self.ongoing_matches(draw)
+    # get all the non-complete matches.
   end
 
   private
@@ -62,7 +74,6 @@ class Draw < ActiveRecord::Base
   def create_matches_and_draw_positions(starting_point, name)
     starting_point.each do |t|
       if t.even?
-        ct = self.draw_positions.count
         m = Match.create!(match_number: t/2, name: name)
         self.matches << m
 
