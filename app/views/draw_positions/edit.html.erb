@@ -5,5 +5,7 @@
 <%= form_for [@dp.draw.tournament, @dp.draw, @dp] do |f| %>
   <%= f.label "Who won this match?"%>
   <%= f.select :winner, [@player_options[:player1].name, @player_options[:player2].name] %>
+  <%= f.text_field :score, placeholder: "Score" %>
+  <%= f.hidden_field :player_options, value: @player_options.to_json %>
   <%= f.submit %>
 <% end %>

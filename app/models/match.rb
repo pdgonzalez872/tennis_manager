@@ -6,6 +6,8 @@ class Match < ActiveRecord::Base
   belongs_to :location
   belongs_to :draw
 
+  attr_accessor :player_options
+
   def winner
     Player.find_by(id: self.winner_id)
   end
@@ -19,14 +21,50 @@ class Match < ActiveRecord::Base
     self.loser_id = loser[0].id
   end
 
-  def update_winner_loser_and_save(player_id:)
-    self.winner_id = player_id
-    self.calculate_loser
+  def update_winner_and_loser(winner:, player_options:)
+    self.winner_id = winner.id
+    data = JSON.parse(player_options)
+
+    if winner.id == data['player1']
+      self.loser_id = data['player2']['id']
+    else
+      self.loser_id = data['player1']['id']
+    end
     self.save
   end
 
+  def update_score(score)
+    self.score = score
+    self.save
+  end
+
+  def display_previous_match_score(draw_position)
+    begin
+      match = Draw.previous_match(draw_position)
+      match.score.nil? ? "" : match.score
+    rescue NoMethodError
+      return ""
+    end
+  end
+
+  def display_time
+    begin
+      self.time.strftime(("%I:%M %p"))
+    rescue NoMethodError
+      " TIME HERE "
+    end
+  end
+
+  def display_location
+    # begin
+    #   self.location
+    # rescue
+    #   ""
+    # end
+    "WOOOOO"
+  end
+
   def has_two_players?
-    # <li class="game game-top"> <%= link_to "#{match.draw_positions.first.players.last.name}", player_path(match.players.first.name) %> <span> WN </span></li>
     self.players.count == 2
   end
 
