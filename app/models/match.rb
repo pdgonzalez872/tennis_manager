@@ -24,6 +24,19 @@ class Match < ActiveRecord::Base
     self.save
   end
 
+  def has_two_players?
+    # <li class="game game-top"> <%= link_to "#{match.draw_positions.first.players.last.name}", player_path(match.players.first.name) %> <span> WN </span></li>
+    self.players.count == 2
+  end
+
+  def has_only_one_player?
+    self.players.count == 1
+  end
+
+  def has_adjacent_players?
+    Draw.match_has_adjacent_players?(self.draw_positions.first) && Draw.match_has_adjacent_players?(self.draw_positions.last)
+  end
+
   def self.round(round_name)
     Match.where(name: "#{round_name}")
   end

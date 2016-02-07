@@ -1,11 +1,11 @@
 
-<% if match.players.count == 2 %>
+<% if match.has_two_players? %>
   <%= render partial: "draw_positions/show_both_players", locals: { match: match }%>
 
-<% elsif match.players.count == 1 %>
+<% elsif match.has_only_one_player? %>
   <%= render partial: "draw_positions/show_player", locals: { match: match } %>
 
-<% elsif Draw.match_has_adjacent_players?(match.draw_positions.first) && Draw.match_has_adjacent_players?(match.draw_positions.last) %>
+<% elsif match.has_adjacent_players? %>
   <%= render partial: "draw_positions/add_winner", locals: { match: match } %>
 
 <% else %>
