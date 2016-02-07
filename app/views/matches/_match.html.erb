@@ -9,19 +9,19 @@
 
   <li class="game game-top"> TBD <span> WN </span></li>
   <li class="game game-spacer"> hi </li>
-  <li class="game game-bottom "> <%= match.draw_positions.last.players.last.name %> <span> 3:00 </span></li>
+  <li class="game game-bottom "> <%= match.draw_positions_players.last.player.name %> <span> 3:00 </span></li>
 
 <% elsif match.bottom_player_is_nil? %>
 
-  <li class="game game-top"> <%= match.draw_positions.first.players.last.name %> <span> WN </span></li>
+  <li class="game game-top"> <%= match.draw_positions_players.first.player.name %> <span> WN </span></li>
   <li class="game game-spacer"> hi </li>
   <li class="game game-bottom "> TBD <span> 3:00 </span></li>
 
 <% else %>
 
-  <li class="game game-top"> <%= match.draw_positions.first.players.last.name%> <span> WN </span></li>
+  <li class="game game-top"> <%= match.draw_positions_players.first.player.name %> <span> WN </span></li>
   <li class="game game-spacer"> hi </li>
-  <li class="game game-bottom "> <%= match.draw_positions.last.players.last.name %> <span> 3:00 </span></li>
+  <li class="game game-bottom "> <%= match.draw_positions_players.last.player.name %> <span> 3:00 </span></li>
 
 <% end %>
 
