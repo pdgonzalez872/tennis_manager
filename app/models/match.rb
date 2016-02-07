@@ -47,6 +47,23 @@ class Match < ActiveRecord::Base
     end
   end
 
+  def display_time
+    begin
+      self.time.strftime(("%I:%M %p"))
+    rescue NoMethodError
+      " TIME HERE "
+    end
+  end
+
+  def display_location
+    # begin
+    #   self.location
+    # rescue
+    #   ""
+    # end
+    "WOOOOO"
+  end
+
   def has_two_players?
     self.players.count == 2
   end
