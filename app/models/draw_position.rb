@@ -12,6 +12,10 @@ class DrawPosition < ActiveRecord::Base
     self.players.first.nil?
   end
 
+  def find_previous_match
+    
+  end
+
   # To fix error: find DrawPosition you want fixed, then find player, then use the below:
   def fix_human_error(player_id:)
     pl = Player.find_by(id: player_id)
