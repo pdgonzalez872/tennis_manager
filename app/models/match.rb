@@ -37,6 +37,18 @@ class Match < ActiveRecord::Base
     Draw.match_has_adjacent_players?(self.draw_positions.first) && Draw.match_has_adjacent_players?(self.draw_positions.last)
   end
 
+  def no_players_are_nil?
+    self.draw_positions.first.players.last == nil && self.draw_positions.last.players.last == nil
+  end
+
+  def top_player_is_nil?
+    self.draw_positions.first.players.last == nil
+  end
+
+  def bottom_player_is_nil?
+    self.draw_positions.last.players.last == nil
+  end
+
   def self.round(round_name)
     Match.where(name: "#{round_name}")
   end

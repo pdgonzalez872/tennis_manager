@@ -1,17 +1,17 @@
 
-<% if  match.draw_positions.first.players.last == nil && match.draw_positions.last.players.last == nil %>
+<% if match.no_players_are_nil? %>
 
 <li class="game game-top">    <span> WN </span></li>
 <li class="game game-spacer"> hi </li>
 <li class="game game-bottom ">    <span> 3:00 </span></li>
 
-<% elsif match.draw_positions.first.players.last == nil %>
+<% elsif match.top_player_is_nil? %>
 
 <li class="game game-top"> TBD <span> WN </span></li>
 <li class="game game-spacer"> hi </li>
 <li class="game game-bottom "> <%= match.draw_positions.last.players.last.name %> <span> 3:00 </span></li>
 
-<% elsif match.draw_positions.last.players.last == nil %>
+<% elsif match.bottom_player_is_nil? %>
 
 <li class="game game-top"> <%= match.draw_positions.first.players.last.name %> <span> WN </span></li>
 <li class="game game-spacer"> hi </li>
