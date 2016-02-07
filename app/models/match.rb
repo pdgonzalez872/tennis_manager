@@ -40,7 +40,6 @@ class Match < ActiveRecord::Base
   end
 
   def has_two_players?
-    # <li class="game game-top"> <%= link_to "#{match.draw_positions.first.players.last.name}", player_path(match.players.first.name) %> <span> WN </span></li>
     self.players.count == 2
   end
 
