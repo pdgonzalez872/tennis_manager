@@ -15,6 +15,7 @@ class DrawPositionsController < ApplicationController
 
     previous_match = Match.find_by(match_number: params[:id])
     previous_match.update_winner_and_loser(winner: player, player_options: player_options)
+    previous_match.update_score(params[:draw_position][:score])
 
     if dp.players << player
       redirect_to tournament_draw_path(tournament_id: dp.draw.tournament.id,

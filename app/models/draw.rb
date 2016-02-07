@@ -36,6 +36,10 @@ class Draw < ActiveRecord::Base
     # if m
   end
 
+  def self.previous_match(draw_position)
+    Match.find_by(match_number: draw_position.id)
+  end
+
   # TODO
   def self.ongoing_matches(draw)
     # get all the non-complete matches.

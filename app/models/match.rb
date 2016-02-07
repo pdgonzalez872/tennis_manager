@@ -33,10 +33,18 @@ class Match < ActiveRecord::Base
     self.save
   end
 
-  def update_winner_loser_and_save(player_id:)
-    self.winner_id = player_id
-    self.calculate_loser
+  def update_score(score)
+    self.score = score
     self.save
+  end
+
+  def display_previous_match_score(draw_position)
+    begin
+      match = Draw.previous_match(draw_position)
+      match.score.nil? ? "" : match.score
+    rescue NoMethodError
+      return ""
+    end
   end
 
   def has_two_players?

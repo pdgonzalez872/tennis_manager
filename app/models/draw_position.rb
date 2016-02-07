@@ -6,7 +6,7 @@ class DrawPosition < ActiveRecord::Base
   belongs_to :draw
 
   # http://stackoverflow.com/questions/11487709/how-to-pass-arbitrary-non-model-attribute-values-to-a-rails-action
-  attr_accessor :winner
+  attr_accessor :winner, :score
 
   def has_player?
     self.players.first.nil?
