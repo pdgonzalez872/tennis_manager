@@ -6,6 +6,8 @@ class Match < ActiveRecord::Base
   belongs_to :location
   belongs_to :draw
 
+  attr_accessor :player_options
+
   def winner
     Player.find_by(id: self.winner_id)
   end
@@ -17,6 +19,18 @@ class Match < ActiveRecord::Base
   def calculate_loser
     loser = self.players.select { |player| player.id != self.winner_id }
     self.loser_id = loser[0].id
+  end
+
+  def update_winner_and_loser(winner:, player_options:)
+    self.winner_id = winner.id
+    data = JSON.parse(player_options)
+
+    if winner.id == data['player1']
+      self.loser_id = data['player2']['id']
+    else
+      self.loser_id = data['player1']['id']
+    end
+    self.save
   end
 
   def update_winner_loser_and_save(player_id:)

@@ -1,7 +1,6 @@
 <h1> <%= @draw.tournament.name %> - <%= @draw.name %></h1>
 
 <br>
-  <% # if admin %>
   <%= link_to "Edit Draw", edit_tournament_draw_path(tournament_id: @draw.tournament.id, id: @draw.id) %>
 <br>
 

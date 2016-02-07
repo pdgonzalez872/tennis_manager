@@ -13,7 +13,7 @@ class DrawPosition < ActiveRecord::Base
   end
 
   def find_previous_match
-    
+
   end
 
   # To fix error: find DrawPosition you want fixed, then find player, then use the below:
