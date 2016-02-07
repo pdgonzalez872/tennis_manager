@@ -1,15 +1,28 @@
 
-<% if match.has_two_players? %>
-  <%= render partial: "draw_positions/show_both_players", locals: { match: match }%>
+<% if  match.draw_positions.first.players.last == nil && match.draw_positions.last.players.last == nil %>
 
-<% elsif match.has_only_one_player? %>
-  <%= render partial: "draw_positions/show_player", locals: { match: match } %>
+<li class="game game-top">    <span> WN </span></li>
+<li class="game game-spacer"> hi </li>
+<li class="game game-bottom ">    <span> 3:00 </span></li>
 
-<% elsif match.has_adjacent_players? %>
-  <%= render partial: "draw_positions/add_winner", locals: { match: match } %>
+<% elsif match.draw_positions.first.players.last == nil %>
+
+<li class="game game-top"> TBD <span> WN </span></li>
+<li class="game game-spacer"> hi </li>
+<li class="game game-bottom "> <%= match.draw_positions.last.players.last.name %> <span> 3:00 </span></li>
+
+<% elsif match.draw_positions.last.players.last == nil %>
+
+<li class="game game-top"> <%= match.draw_positions.first.players.last.name %> <span> WN </span></li>
+<li class="game game-spacer"> hi </li>
+<li class="game game-bottom "> TBD <span> 3:00 </span></li>
 
 <% else %>
-  <%= render partial: "draw_positions/show_nothing" %>
+
+<li class="game game-top"> <%= match.draw_positions.first.players.last.name%> <span> WN </span></li>
+<li class="game game-spacer"> hi </li>
+<li class="game game-bottom "> <%= match.draw_positions.last.players.last.name %> <span> 3:00 </span></li>
+
 <% end %>
 
 <li class="spacer">&nbsp;</li>
