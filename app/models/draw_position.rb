@@ -11,4 +11,12 @@ class DrawPosition < ActiveRecord::Base
   def has_player?
     self.players.first.nil?
   end
+
+  # To fix error: find DrawPosition you want fixed, then find player, then use the below:
+  def fix_human_error(player_id:)
+    pl = Player.find_by(id: player_id)
+    dpp = DrawPositionsPlayer.new(player_id: player_id)
+    self.draw_positions_players << dpp
+  end
+
 end
