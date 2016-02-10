@@ -14,3 +14,62 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding: 0;
+}
+
+.carousel .item {
+  width: 100%;
+  max-height: 550px;
+}
+.carousel .item img {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .block {
+      margin-left: -20px;
+      margin-right: -20px;
+  }
+}
+
+.overlay {
+  color: #fff;
+  position: absolute;
+  z-index: 12;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  text-align:center;
+}
+
+.box {
+  margin-bottom: 20px;
+  padding: 40px 20px;
+  background: #fff;
+  background: rgba(255,255,255,0.9);
+}
+
+@media screen and (min-width:1200px) {
+  .box:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .overlay {
+    top: 10%;
+  }
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../assets/glyphicons-halflings-regular.eot');
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+  url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
