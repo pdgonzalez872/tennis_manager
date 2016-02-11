@@ -19,6 +19,24 @@ body {
   padding: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 82px;
+  font-family: 'Sintony', sans-serif;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
 .carousel .item {
   width: 100%;
   max-height: 550px;
@@ -38,18 +56,59 @@ body {
   color: #fff;
   position: absolute;
   z-index: 12;
-  top: 35%;
+  top: 30%;
   left: 0;
   width: 100%;
   text-align:center;
 }
 
-.box {
-  margin-bottom: 20px;
-  padding: 40px 20px;
-  background: #fff;
-  background: rgba(255,255,255,0.9);
+.well {
+  border-radius: 0;
 }
+
+.btn.outline {
+  background: none;
+  padding: 12px 22px;
+}
+
+.btn.back-white {
+  background-color: white;
+  padding: 12px 22px;
+}
+
+.btn-primary.outline {
+    border: 2px solid #E6E6E6;
+    color: #E6E6E6;
+}
+
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: #E5D5D5;
+    border-color: #E5D5D5;
+}
+
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
+}
+
+.bpad {
+  margin: 20px;
+  padding-left: 3px;
+}
+
+.topl {
+  position:absolute;
+    top:5px;
+    left:5px;
+}
+
+.topr {
+  position:absolute;
+  top:5px;
+  right:5px;
+}
+
 
 @media screen and (min-width:1200px) {
   .box:after {
@@ -66,7 +125,7 @@ body {
 }
 
 .features .glyphicon {
-  font-size: 32px;
+  font-size: 52px;
 }
 
 @font-face {
@@ -76,4 +135,101 @@ body {
   url('../assets/glyphicons-halflings-regular.woff') format('woff'),
   url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
   url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.box {
+  width: 873px;
+  height: 390px;
+}
+
+.tournaments {
+  position: absolute;
+  background-image: url('bracket.jpg') no-repeat;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+}
+
+.slider {
+  width: 520px;
+  overflow: hidden;
+  display: inline-block;
+  transform: skewX(-20deg);
+  transition: width 1.2s ease-in-out;
+  margin-left: -76px;
+  pointer-events: none;
+}
+
+.players {
+  transform: skewX(20deg);
+  margin-left: 76px;
+  background-image: url('tennis-girl-silhouette.jpg') no-repeat;
+  pointer-events: auto;
+}
+
+.slider:hover {
+    width: 720px;
+}
+
+.tournaments:hover + .slider {
+    width: 250px;
+}
+
+.clip-path {
+  position: relative;
+  float: left;
+  margin: 20px;
+  height: 300px;
+  width: 340px;
+  background: #FF8552;
+  padding: 4px;
+  transition: all 1s;
+}
+
+.clip-path.both {
+  position: relative;
+  float: left;
+  margin: 20px;
+  height: 300px;
+  width: 400px;
+  background: #297373;
+  padding: 4px;
+  transition: all 1s;
+  margin: 20px 0 20px 0;
+  -webkit-clip-path: polygon(0% 100%, 15% 0%, 100% 0%, 85% 100%);
+  left: -50px;
+}
+
+.clip-path.left {
+  margin: 20px 0 20px 0;
+  -webkit-clip-path: polygon(17% 0%, 100% 0%, 100% 100%, 0% 100%);
+  left: -100px;
+}
+
+.clip-path.right {
+  margin: 20px 0 20px 50px;
+  -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 83% 100%);
+}
+
+.clip-path .content {
+  position: absolute;
+  content: '';
+  height: calc(100% - 10px);
+  width: calc(100% - 8px);
+  margin-top: 20%;
+}
+
+.clip-path.both .content {
+  -webkit-clip-path: polygon(0% 100%, 15% 0%, 100% 0%, 85% 100%);
+}
+
+.clip-path.left .content {
+  -webkit-clip-path: -webkit-clip-path: polygon(17% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.clip-path.right .content {
+  -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 83% 100%);
+}
+
+.nopadding {
+   padding: 0;
+   margin: 0;
 }

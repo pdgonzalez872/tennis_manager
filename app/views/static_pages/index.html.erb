@@ -28,10 +28,31 @@
 </div>
 
 <div class="overlay">
-  <h2>Hi from static pages index. This is the main page for now</h2>
+  <h1>TENNIS</h1>
 </div>
 
 <br>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-1">
+      <div class="box tournaments">
+        <button class="btn btn-primary back-white pull-right bpad topr"><%= link_to "Tournaments", tournaments_path %></button>
+        <img class="img-responsive" src="<%= asset_path( 'bracket.jpg' ) %>">
+      </div>
+      <div class="slider">
+        <div class="box players">
+          <button class="btn btn-primary back-white bpad topl"><%= link_to "Players", players_path %></button>
+          <img class="img-responsive" src="<%= asset_path( 'tennis-girl-silhouette.jpg' ) %>" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <br>
 <br>
 <br>
 <div class="container">
@@ -41,7 +62,7 @@
         <i class='glyphicon glyphicon-knight'></i>
         <br>
         <br>
-        <h3><%= link_to "Tournaments", tournaments_path %></h3>
+        <button class="btn btn-primary outline"><%= link_to "Tournaments", tournaments_path %></button>
       </div>
     </div>
     <div class="col-sm-6 col-lg-4">
@@ -49,7 +70,7 @@
         <i class='glyphicon glyphicon-user'></i>
         <br>
         <br>
-        <h3><%= link_to "Players", players_path %></h3>
+        <button class="btn btn-primary outline"><%= link_to "Players", players_path %></button>
       </div>
     </div>
     <div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-3">
@@ -57,11 +78,35 @@
         <i class='glyphicon glyphicon-globe'></i>
         <br>
         <br>
-        <h3><%= link_to "Locations", locations_path %></h3>
+        <button class="btn btn-primary outline"><%= link_to "Locations", locations_path %></button>
       </div>
     </div>
   </div>
 </div>
-
-
-
+ -->
+<div class="container text-center features">
+  <div class="clip-path right">
+    <div class="content">
+      <i class='glyphicon glyphicon-knight'></i>
+      <br>
+      <br>
+      <button class="btn btn-primary outline"><%= link_to "Tournaments", tournaments_path %></button>
+    </div>
+  </div>
+  <div class="clip-path both">
+    <div class="content">
+      <i class='glyphicon glyphicon-user'></i>
+      <br>
+      <br>
+      <button class="btn btn-primary outline"><%= link_to "Players", players_path %></button>
+    </div>
+  </div>
+  <div class="clip-path left">
+    <div class="content">
+      <i class='glyphicon glyphicon-globe'></i>
+      <br>
+      <br>
+      <button class="btn btn-primary outline"><%= link_to "Locations", locations_path %></button>
+    </div>
+  </div>
+</div>
