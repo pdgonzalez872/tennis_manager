@@ -1,27 +1,27 @@
 
 <% if match.no_players_are_nil? %>
 
-  <li class="game game-top">    <span> WN </span></li>
+  <li class="game game-top">    <span> <%= match.display_location %> </span></li>
   <li class="game game-spacer">  </li>
-  <li class="game game-bottom ">    <span> 3:00 </span></li>
+  <li class="game game-bottom ">    <span> <%= match.display_time %> </span></li>
 
 <% elsif match.top_player_is_nil? %>
 
-  <li class="game game-top">  <span> WN </span></li>
+  <li class="game game-top">  <span> <%= match.display_location %> </span></li>
   <li class="game game-spacer">  </li>
-  <li class="game game-bottom "> <%= match.draw_positions.last.draw_positions_players.last.player.name %> <%= match.display_previous_match_score(match.draw_positions.last) %> <span> 3:00 </span></li>
+  <li class="game game-bottom "> <%= match.draw_positions.last.draw_positions_players.last.player.name %> <%= match.display_previous_match_score(match.draw_positions.last) %> <span> <%= match.display_time %> </span></li>
 
 <% elsif match.bottom_player_is_nil? %>
 
-  <li class="game game-top"> <%= match.draw_positions.first.draw_positions_players.last.player.name %> <%= match.display_previous_match_score(match.draw_positions.first)%> <span> WN </span></li>
+  <li class="game game-top"> <%= match.draw_positions.first.draw_positions_players.last.player.name %> <%= match.display_previous_match_score(match.draw_positions.first)%> <span> <%= match.display_location %> </span></li>
   <li class="game game-spacer">  </li>
   <li class="game game-bottom ">  <span> 3:00 </span></li>
 
 <% else %>
 
-  <li class="game game-top"> <%= match.draw_positions.first.draw_positions_players.last.player.name %> <%= match.display_previous_match_score(match.draw_positions.first) %> <span> WN </span></li>
+  <li class="game game-top"> <%= match.draw_positions.first.draw_positions_players.last.player.name %> <%= match.display_previous_match_score(match.draw_positions.first) %> <span> <%= match.display_location %> </span></li>
   <li class="game game-spacer">  </li>
-  <li class="game game-bottom "> <%= match.draw_positions.last.draw_positions_players.last.player.name %> <%= match.display_previous_match_score(match.draw_positions.last) %> <span> 3:00 </span></li>
+  <li class="game game-bottom "> <%= match.draw_positions.last.draw_positions_players.last.player.name %> <%= match.display_previous_match_score(match.draw_positions.last) %> <span> <%= match.display_time %> </span></li>
 
 <% end %>
 

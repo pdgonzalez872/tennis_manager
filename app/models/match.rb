@@ -51,17 +51,16 @@ class Match < ActiveRecord::Base
     begin
       self.time.strftime(("%I:%M %p"))
     rescue NoMethodError
-      " TIME HERE "
+      "10:00 AM"
     end
   end
 
   def display_location
-    # begin
-    #   self.location
-    # rescue
-    #   ""
-    # end
-    "WOOOOO"
+    begin
+      self.location.name
+    rescue
+      "WI"
+    end
   end
 
   def has_two_players?
