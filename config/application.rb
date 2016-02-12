@@ -29,6 +29,13 @@ module TennisManager
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # https://devcenter.heroku.com/articles/rails-4-asset-pipeline
+    config.serve_static_assets = true
+
+    # http://stackoverflow.com/questions/20040342/precompiling-assets-failed
+    config.assets.initialize_on_precompile = false
+
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end

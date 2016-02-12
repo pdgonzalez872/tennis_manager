@@ -51,13 +51,6 @@ a:hover {
   width: 100%;
 }
 
-@media (max-width: 767px) {
-  .block {
-    margin-left: -20px;
-    margin-right: -20px;
-  }
-}
-
 .overlay {
   color: #fff;
   position: absolute;
@@ -102,6 +95,11 @@ a:hover {
   margin: 0 auto;
   width: auto;
   display: inline-block;
+}
+
+.nopadding {
+   padding: 0;
+   margin: 0;
 }
 
 .superclear {
@@ -186,7 +184,7 @@ a:hover {
   margin-top: 20%;
 }
 
-clip-path-vert .content {
+.clip-path-vert .content {
   position: absolute;
   content: '';
   height: calc(100% - 10px);
@@ -194,18 +192,8 @@ clip-path-vert .content {
   margin-top: 40px;
 }
 
-.nopadding {
-   padding: 0;
-   margin: 0;
-}
-
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('../assets/glyphicons-halflings-regular.eot');
-  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-  url('../assets/glyphicons-halflings-regular.woff') format('woff'),
-  url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
-  url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+.clip-path.left .content {
+  -webkit-clip-path: polygon(17% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 @media screen and (min-width:1200px) {
@@ -216,8 +204,24 @@ clip-path-vert .content {
   }
 }
 
+@media (max-width: 767px) {
+  .block {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+
 @media screen and (max-width:600px) {
   .overlay {
     top: 10%;
   }
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../assets/glyphicons-halflings-regular.eot');
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+  url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
