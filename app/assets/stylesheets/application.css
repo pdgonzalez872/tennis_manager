@@ -184,7 +184,7 @@ a:hover {
   height: 250px;
   width: 100%;
   background: #297373;
-  padding: 50px;
+  padding: 30px;
   transition: all 1s;
   -webkit-clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0% 100%);
 }
