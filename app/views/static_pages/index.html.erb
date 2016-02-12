@@ -1,4 +1,4 @@
-<section class="block">
+<div class="block">
   <div id="carousel-generic" class="carousel slide">
     <ol class="carousel-indicators hidden-xs">
       <li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
@@ -25,16 +25,46 @@
       </a>
     </div>
   </div>
+  <div class="overlay">
+    <h1>PADDLE</h1>
+  </div>
 </div>
 
-<div class="overlay">
-  <h1>TENNIS</h1>
+<br>
+<br>
+<br>
+
+<div class="container text-center features">
+  <div class="col-centered hidden-xs hidden-sm">
+    <div class="clip-path right">
+      <div class="content">
+        <i class='glyphicon glyphicon-knight'></i>
+        <br>
+        <br>
+        <button class="btn btn-primary outline"><%= link_to "Tournaments", tournaments_path %></button>
+      </div>
+    </div>
+    <div class="clip-path both">
+      <div class="content">
+        <i class='glyphicon glyphicon-user'></i>
+        <br>
+        <br>
+        <button class="btn btn-primary outline"><%= link_to "Players", players_path %></button>
+      </div>
+    </div>
+    <div class="clip-path left">
+      <div class="content">
+        <i class='glyphicon glyphicon-globe'></i>
+        <br>
+        <br>
+        <button class="btn btn-primary outline"><%= link_to "Locations", locations_path %></button>
+      </div>
+    </div>
+    <br class="superclear">
+  </div>
 </div>
 
-<br>
-<br>
-<br>
-
+<!--
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-1">
@@ -50,63 +80,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<!-- <br>
-<br>
-<br>
-<div class="container">
-  <div class="row text-center features">
-    <div class="col-sm-6 col-lg-4">
-      <div class="well">
-        <i class='glyphicon glyphicon-knight'></i>
-        <br>
-        <br>
-        <button class="btn btn-primary outline"><%= link_to "Tournaments", tournaments_path %></button>
-      </div>
-    </div>
-    <div class="col-sm-6 col-lg-4">
-      <div class="well">
-        <i class='glyphicon glyphicon-user'></i>
-        <br>
-        <br>
-        <button class="btn btn-primary outline"><%= link_to "Players", players_path %></button>
-      </div>
-    </div>
-    <div class="col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-3">
-      <div class="well">
-        <i class='glyphicon glyphicon-globe'></i>
-        <br>
-        <br>
-        <button class="btn btn-primary outline"><%= link_to "Locations", locations_path %></button>
-      </div>
-    </div>
-  </div>
-</div>
- -->
-<div class="container text-center features">
-  <div class="clip-path right">
-    <div class="content">
-      <i class='glyphicon glyphicon-knight'></i>
-      <br>
-      <br>
-      <button class="btn btn-primary outline"><%= link_to "Tournaments", tournaments_path %></button>
-    </div>
-  </div>
-  <div class="clip-path both">
-    <div class="content">
-      <i class='glyphicon glyphicon-user'></i>
-      <br>
-      <br>
-      <button class="btn btn-primary outline"><%= link_to "Players", players_path %></button>
-    </div>
-  </div>
-  <div class="clip-path left">
-    <div class="content">
-      <i class='glyphicon glyphicon-globe'></i>
-      <br>
-      <br>
-      <button class="btn btn-primary outline"><%= link_to "Locations", locations_path %></button>
-    </div>
-  </div>
-</div>
+</div> -->

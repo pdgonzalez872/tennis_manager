@@ -124,8 +124,19 @@ a:hover {
   }
 }
 
+.col-centered{
+  margin: 0 auto;
+  width: auto;
+  display: inline-block;
+}
+
+.superclear {
+  clear: both;
+}
+
 .features .glyphicon {
   font-size: 52px;
+  margin: 0 auto;
 }
 
 @font-face {
@@ -178,7 +189,7 @@ a:hover {
   float: left;
   margin: 20px;
   height: 300px;
-  width: 340px;
+  width: 309px;
   background: #FF8552;
   padding: 4px;
   transition: all 1s;
@@ -189,23 +200,21 @@ a:hover {
   float: left;
   margin: 20px;
   height: 300px;
-  width: 400px;
+  width: 372px;
   background: #297373;
   padding: 4px;
   transition: all 1s;
-  margin: 20px 0 20px 0;
+  margin: 20px 0;
   -webkit-clip-path: polygon(0% 100%, 15% 0%, 100% 0%, 85% 100%);
-  left: -50px;
 }
 
 .clip-path.left {
-  margin: 20px 0 20px 0;
+  margin: 20px 0;
   -webkit-clip-path: polygon(17% 0%, 100% 0%, 100% 100%, 0% 100%);
-  left: -100px;
 }
 
 .clip-path.right {
-  margin: 20px 0 20px 50px;
+  margin: 20px 0;
   -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 83% 100%);
 }
 
