@@ -222,7 +222,7 @@ a:hover {
 }
 
 .clip-path.left .content {
-  -webkit-clip-path: -webkit-clip-path: polygon(17% 0%, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(17% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .clip-path.right .content {
