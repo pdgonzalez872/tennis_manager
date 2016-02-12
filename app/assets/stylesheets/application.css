@@ -36,7 +36,7 @@ h6 {
 }
 
 a {
-  color: black;
+  color: #E6E6E6;
 }
 
 a:hover {
@@ -98,20 +98,6 @@ a:hover {
     box-shadow: none;
 }
 
-@media screen and (min-width:1200px) {
-  .box:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-
-@media screen and (max-width:600px) {
-  .overlay {
-    top: 10%;
-  }
-}
-
 .col-centered{
   margin: 0 auto;
   width: auto;
@@ -125,15 +111,6 @@ a:hover {
 .features .glyphicon {
   font-size: 52px;
   margin: 0 auto;
-}
-
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('../assets/glyphicons-halflings-regular.eot');
-  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-  url('../assets/glyphicons-halflings-regular.woff') format('woff'),
-  url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
-  url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 .clip-path {
@@ -163,11 +140,13 @@ a:hover {
 .clip-path.left {
   margin: 20px 0;
   -webkit-clip-path: polygon(17% 0%, 100% 0%, 100% 100%, 0% 100%);
+  right: 40px;
 }
 
 .clip-path.right {
   margin: 20px 0;
   -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 83% 100%);
+  left:40px;
 }
 
 .clip-path-vert {
@@ -218,4 +197,27 @@ clip-path-vert .content {
 .nopadding {
    padding: 0;
    margin: 0;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../assets/glyphicons-halflings-regular.eot');
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+  url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+@media screen and (min-width:1200px) {
+  .box:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .overlay {
+    top: 10%;
+  }
 }
