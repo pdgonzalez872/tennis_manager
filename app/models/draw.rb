@@ -71,12 +71,21 @@ class Draw < ActiveRecord::Base
                "sixty_four" => (32..63) }
 
     rounds.each do |k,v|
-      k == "champion" ? create_champion_position : create_matches_and_draw_positions(rounds["#{k}"], "#{k}")
+      if k == "champion"
+        create_champion_position
+      else
+        if self.size >= v.to_a[0]
+          create_matches_and_draw_positions(rounds["#{k}"], "#{k}")
+        else
+          return
+        end
+      end
     end
   end
 
   def create_matches_and_draw_positions(starting_point, name)
     starting_point.each do |t|
+      # p "t.even? ------- #{t.even?}"
       if t.even?
         m = Match.create!(match_number: t/2, name: name)
         self.matches << m

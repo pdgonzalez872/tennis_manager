@@ -1,4 +1,4 @@
-t = Tournament.create!(name: "Roland Garros")
+t = Tournament.create!(name: "Working Women's Paddle")
 
 d = Draw.create!(name: "Main", size: 32)
 
@@ -41,6 +41,7 @@ player_array = [ "Carlee/Sterrett",
 
 player_hash = Hash[player_array.zip position_range]
 
+# populates
 player_hash.each do |k, v|
   d = DrawPosition.find_by(draw_positions_number: v)
   player = Player.create!(name: k)
@@ -48,6 +49,14 @@ player_hash.each do |k, v|
 end
 
 
+w = Draw.create!(name: "Consolation", size: 16)
+t.draws << w
 
-w = Draw.create!(name: "Wimbledon", size: 16)
+w = Draw.create!(name: "Last Chance", size: 8)
+t.draws << w
+
+w = Draw.create!(name: "Quarter Reprieve", size: 4)
+t.draws << w
+
+w = Draw.create!(name: "Reprieve", size: 8)
 t.draws << w
