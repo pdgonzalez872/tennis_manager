@@ -18,9 +18,14 @@ class DrawPosition < ActiveRecord::Base
 
   # To fix error: find DrawPosition you want fixed, then find player, then use the below:
   def fix_human_error(player_id:)
-    pl = Player.find_by(id: player_id)
     dpp = DrawPositionsPlayer.new(player_id: player_id)
     self.draw_positions_players << dpp
+
+    # update match here: match_number == self.draw_positions_number
+    pl = Player.find_by(id: player_id)
+    match = Match.find_by(match_number: self.draw_positions_number)
+    match.winner_id = pl.id
+    match.save
   end
 
 end
