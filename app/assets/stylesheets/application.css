@@ -189,18 +189,18 @@ a:hover {
   float: left;
   margin: 20px;
   height: 300px;
-  width: 309px;
+  width: 294px;
   background: #FF8552;
   padding: 4px;
   transition: all 1s;
 }
 
-.clip-path.both {
+.clip-path.lr {
   position: relative;
   float: left;
   margin: 20px;
   height: 300px;
-  width: 372px;
+  width: 342px;
   background: #297373;
   padding: 4px;
   transition: all 1s;
@@ -218,6 +218,35 @@ a:hover {
   -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 83% 100%);
 }
 
+.clip-path-vert {
+  position: relative;
+  float: left;
+  height: 200px;
+  width: 100%;
+  background: #FF8552;
+  padding: 30px;
+  transition: all 1s;
+}
+
+.clip-path-vert.tb {
+  position: relative;
+  float: left;
+  height: 250px;
+  width: 100%;
+  background: #297373;
+  padding: 50px;
+  transition: all 1s;
+  -webkit-clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0% 100%);
+}
+
+.clip-path-vert.bottom {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+}
+
+.clip-path-vert.top {
+  -webkit-clip-path: polygon(0% 20%, 100% 0%, 100% 100%, 0% 100%);
+}
+
 .clip-path .content {
   position: absolute;
   content: '';
@@ -226,17 +255,14 @@ a:hover {
   margin-top: 20%;
 }
 
-.clip-path.both .content {
-  -webkit-clip-path: polygon(0% 100%, 15% 0%, 100% 0%, 85% 100%);
+clip-path-vert .content {
+  position: absolute;
+  content: '';
+  height: calc(100% - 10px);
+  width: calc(100% - 8px);
+  margin-top: 40px;
 }
 
-.clip-path.left .content {
-  -webkit-clip-path: -webkit-clip-path: polygon(17% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-
-.clip-path.right .content {
-  -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 83% 100%);
-}
 
 .nopadding {
    padding: 0;
