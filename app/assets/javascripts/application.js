@@ -15,3 +15,10 @@
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
+
+
+<script>
+  $('.carousel').carousel({
+      interval: 4000
+  })
+</script>
