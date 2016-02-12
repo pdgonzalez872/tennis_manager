@@ -246,7 +246,7 @@ a:hover {
 }
 
 .clip-path.left .content {
-  -webkit-clip-path: polygon(17% 0%, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: -webkit-clip-path: polygon(17% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 @media screen and (min-width:1200px) {
