@@ -92,24 +92,6 @@ a:hover {
     box-shadow: none;
 }
 
-.bpad {
-  margin: 20px;
-  padding-left: 3px;
-}
-
-.topl {
-  position:absolute;
-    top:5px;
-    left:5px;
-}
-
-.topr {
-  position:absolute;
-  top:5px;
-  right:5px;
-}
-
-
 @media screen and (min-width:1200px) {
   .box:after {
     content: '';
@@ -146,42 +128,6 @@ a:hover {
   url('../assets/glyphicons-halflings-regular.woff') format('woff'),
   url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
   url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
-
-.box {
-  width: 873px;
-  height: 390px;
-}
-
-.tournaments {
-  position: absolute;
-  background-image: url('bracket.jpg') no-repeat;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .7);
-}
-
-.slider {
-  width: 520px;
-  overflow: hidden;
-  display: inline-block;
-  transform: skewX(-20deg);
-  transition: width 1.2s ease-in-out;
-  margin-left: -76px;
-  pointer-events: none;
-}
-
-.players {
-  transform: skewX(20deg);
-  margin-left: 76px;
-  background-image: url('tennis-girl-silhouette.jpg') no-repeat;
-  pointer-events: auto;
-}
-
-.slider:hover {
-    width: 720px;
-}
-
-.tournaments:hover + .slider {
-    width: 250px;
 }
 
 .clip-path {
@@ -262,7 +208,6 @@ clip-path-vert .content {
   width: calc(100% - 8px);
   margin-top: 40px;
 }
-
 
 .nopadding {
    padding: 0;
