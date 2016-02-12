@@ -2,7 +2,7 @@ class Draw < ActiveRecord::Base
 
   # attr_accessor :complete?
 
-  before_create :create_draw_structure
+  after_create :create_draw_structure
 
   has_many :matches
   has_many :draw_positions

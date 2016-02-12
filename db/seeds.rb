@@ -49,5 +49,5 @@ end
 
 
 
-w = Draw.create!(name: "Wimbledon", size: 32)
+w = Draw.create!(name: "Wimbledon", size: 16)
 t.draws << w
