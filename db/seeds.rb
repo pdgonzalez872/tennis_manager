@@ -46,3 +46,8 @@ player_hash.each do |k, v|
   player = Player.create!(name: k)
   d.players << player
 end
+
+
+
+w = Draw.create!(name: "Wimbledon", size: 32)
+t.draws << w
