@@ -17,6 +17,12 @@
 
 body {
   padding: 0;
+  background-color: #f2f2f2;
+}
+
+.container {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
 }
 
 h1,
@@ -47,8 +53,8 @@ a:hover {
 
 @media (max-width: 767px) {
   .block {
-      margin-left: -20px;
-      margin-right: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
   }
 }
 
