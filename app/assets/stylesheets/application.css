@@ -46,12 +46,17 @@ h2 {
   font-size: 52px;
 }
 
+hr {
+  width: 100px;
+  border: 1px solid;
+}
+
 a {
   color: #000000;
 }
 
 a:hover {
-  color: black;
+  color: #d7c4c0;
 }
 
 .carousel .item {
@@ -140,6 +145,15 @@ a:hover {
 
 .superclear {
   clear: both;
+}
+
+.white {
+  color: #cccccc;
+}
+
+.features {
+  letter-spacing: 2px;
+  font-size: 18px;
 }
 
 .features .glyphicon {
