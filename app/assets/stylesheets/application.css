@@ -28,11 +28,6 @@ body {
   background-color: #f0eae8;
 }
 
-.container {
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-}
-
 h1,
 h2,
 h3,
@@ -47,8 +42,12 @@ h1 {
   font-size: 116px;
 }
 
+h2 {
+  font-size: 52px;
+}
+
 a {
-  color: #E5D5D5;
+  color: #000000;
 }
 
 a:hover {
@@ -72,6 +71,10 @@ a:hover {
   text-align:center;
 }
 
+.container {
+  background: rgba(255,255,255,0.5);
+}
+
 .box {
   margin-bottom: 20px;
   margin-left: 20%;
@@ -84,6 +87,18 @@ a:hover {
 
 .well {
   border-radius: 0;
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.navbar-nav {
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 3px;
 }
 
 .btn.outline {
@@ -239,6 +254,42 @@ a:hover {
 @media screen and (max-width:600px) {
   .overlay {
     top: 10%;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .navbar {
+    border-radius: 0;
+  }
+
+  .navbar-header {
+    display: none;
+  }
+
+  .navbar {
+    min-height: 0;
+  }
+
+  .navbar-default {
+    border: none;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+  }
+
+  .nav>li>a {
+    padding: 35px;
+  }
+
+  .navbar-nav>li>a {
+    line-height: normal;
+  }
+
+  .navbar-nav {
+    display: table;
+    float: none;
+    margin: 0 auto;
+    table-layout: fixed;
+    font-size: 1.25em;
   }
 }
 
