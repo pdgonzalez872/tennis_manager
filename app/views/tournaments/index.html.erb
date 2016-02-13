@@ -24,7 +24,7 @@
           <a href="/players.html">Players</a>
         </li>
         <li>
-          <a href="/locations/index.html">Locations</a>
+          <a href="/locations/index.html">Courts</a>
         </li>
         <li>
           <a href="/extra.html">Extra</a>
@@ -36,7 +36,31 @@
 
 <div class="container">
   <% @tournaments.each do |t| %>
-    <%= link_to "#{t.name}", tournament_path(t) %>
+  <div class="row">
+    <div class="col-lg-12">
+      <hr>
+      <h3 class="intro-text text-center">
+        <strong><%= link_to "#{t.name}", tournament_path(t) %></strong>
+      </h3>
+      <hr>
+    </div>
+    <div class="col-md-6">
+      <img class="img-responsive img-border" src="<%= asset_path( 'platform2x2.jpg' ) %>">
+    </div>
+    <div class="col-md-5 col-md-offset-1">
+      <br>
+      <p>WHERE:</p>
+        <p>Chicago, IL</p>
+      <br>
+      <p>WHEN:
+        <p>Beginning February 27th, 2016</p>
+      <br>
+      <p>REGISTRATION:</p>
+        <p>Register online or in person by February 14th, 2016</p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
   <% end %>
 </div>
 
