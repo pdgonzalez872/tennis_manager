@@ -87,7 +87,7 @@ class Draw < ActiveRecord::Base
     starting_point.each do |t|
       # p "t.even? ------- #{t.even?}"
       if t.even?
-        m = Match.create!(match_number: t/2, name: name)
+        m = Match.create!(match_number: t/2, name: name, time: DateTime.new(2016,2,20,6,0,0))
         self.matches << m
 
         dp1 = DrawPosition.create!(draw_positions_number: m.match_number * 2)
