@@ -40,28 +40,33 @@ class Match < ActiveRecord::Base
 
   def display_previous_match_score(draw_position)
     begin
-      match = Draw.previous_match(draw_position)
-      match.score.nil? ? "" : match.score
+      draw = draw_position.draw
+      match = draw.matches.find_by(match_number: draw_position.draw_positions_number)
+
+      # match = Draw.previous_match(draw_position: draw_position)
+      # match = Draw.previous_match(draw_position: draw_position)
+
+      match.score.nil? ? "-" : match.score
     rescue NoMethodError
       return ""
     end
+    # byebug
   end
 
   def display_time
     begin
       self.time.strftime(("%I:%M %p"))
     rescue NoMethodError
-      " TIME HERE "
+      "10:00 AM"
     end
   end
 
   def display_location
-    # begin
-    #   self.location
-    # rescue
-    #   ""
-    # end
-    "WOOOOO"
+    begin
+      self.location.name
+    rescue
+      "WI"
+    end
   end
 
   def has_two_players?
@@ -81,11 +86,13 @@ class Match < ActiveRecord::Base
   end
 
   def top_player_is_nil?
-    self.draw_positions.first.players.last == nil
+    self.draw_positions.first.players.empty?
+    # self.draw_positions.first.players.last == nil
   end
 
   def bottom_player_is_nil?
-    self.draw_positions.last.players.last == nil
+    self.draw_positions.last.players.empty?
+    # self.draw_positions.last.players.last == nil
   end
 
   def self.round(round_name)

@@ -2,7 +2,7 @@ class Draw < ActiveRecord::Base
 
   # attr_accessor :complete?
 
-  before_create :create_draw_structure
+  after_create :create_draw_structure
 
   has_many :matches
   has_many :draw_positions
@@ -36,8 +36,16 @@ class Draw < ActiveRecord::Base
     # if m
   end
 
-  def self.previous_match(draw_position)
-    Match.find_by(match_number: draw_position.id)
+  def self.previous_match(draw_position:)
+
+    draw = draw_position.draw
+
+    match = draw.matches.find_by(match_number: draw_position.match.match_number / 2)
+
+    match
+    # byebug
+    # Match.find_by(match_number: draw_position.match.match_number)
+    # Match.find_by(match_number: draw_position.match.match_number)
   end
 
   # TODO
@@ -71,14 +79,23 @@ class Draw < ActiveRecord::Base
                "sixty_four" => (32..63) }
 
     rounds.each do |k,v|
-      k == "champion" ? create_champion_position : create_matches_and_draw_positions(rounds["#{k}"], "#{k}")
+      if k == "champion"
+        create_champion_position
+      else
+        if self.size >= v.to_a[0]
+          create_matches_and_draw_positions(rounds["#{k}"], "#{k}")
+        else
+          return
+        end
+      end
     end
   end
 
   def create_matches_and_draw_positions(starting_point, name)
     starting_point.each do |t|
+      # p "t.even? ------- #{t.even?}"
       if t.even?
-        m = Match.create!(match_number: t/2, name: name)
+        m = Match.create!(match_number: t/2, name: name, time: DateTime.new(2016,2,20,6,0,0))
         self.matches << m
 
         dp1 = DrawPosition.create!(draw_positions_number: m.match_number * 2)

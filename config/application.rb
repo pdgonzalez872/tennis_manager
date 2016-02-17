@@ -30,7 +30,7 @@ module TennisManager
     # config.i18n.default_locale = :de
 
     # https://devcenter.heroku.com/articles/rails-4-asset-pipeline
-    config.serve_static_assets = true
+    config.serve_static_files = true
 
     # http://stackoverflow.com/questions/20040342/precompiling-assets-failed
     config.assets.initialize_on_precompile = false

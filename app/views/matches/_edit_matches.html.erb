@@ -19,7 +19,7 @@
 
 <% else %>
 
-  <li class="game game-top"> <%= match.draw_positions.first.draw_positions_players.first.player.name %> <span> WN </span></li>
+  <li class="game game-top"> <%= match.draw_positions.first.draw_positions_players.last.player.name %> <span> WN </span></li>
   <li class="game game-spacer">  </li>
   <li class="game game-bottom "> <%= match.draw_positions.last.draw_positions_players.last.player.name %> <span> 3:00 </span></li>
 

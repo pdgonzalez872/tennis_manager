@@ -8,5 +8,5 @@ Tournament show page
 
 <% @tournament.draws.each do |d| %>
   <%= link_to "#{d.name}", tournament_draw_path(tournament_id: @tournament.id,
-                                                draw_id: d.id) %>
+                                                id: d.id) %>
 <% end %>
