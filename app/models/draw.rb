@@ -37,15 +37,8 @@ class Draw < ActiveRecord::Base
   end
 
   def self.previous_match(draw_position:)
-
     draw = draw_position.draw
-
-    match = draw.matches.find_by(match_number: draw_position.match.match_number / 2)
-
-    match
-    # byebug
-    # Match.find_by(match_number: draw_position.match.match_number)
-    # Match.find_by(match_number: draw_position.match.match_number)
+    match = draw.matches.find_by(match_number: draw_position.draw_positions_number)
   end
 
   # TODO

@@ -40,17 +40,11 @@ class Match < ActiveRecord::Base
 
   def display_previous_match_score(draw_position)
     begin
-      draw = draw_position.draw
-      match = draw.matches.find_by(match_number: draw_position.draw_positions_number)
-
-      # match = Draw.previous_match(draw_position: draw_position)
-      # match = Draw.previous_match(draw_position: draw_position)
-
+      match = Draw.previous_match(draw_position: draw_position)
       match.score.nil? ? "-" : match.score
     rescue NoMethodError
       return ""
     end
-    # byebug
   end
 
   def display_time
@@ -87,12 +81,10 @@ class Match < ActiveRecord::Base
 
   def top_player_is_nil?
     self.draw_positions.first.players.empty?
-    # self.draw_positions.first.players.last == nil
   end
 
   def bottom_player_is_nil?
     self.draw_positions.last.players.empty?
-    # self.draw_positions.last.players.last == nil
   end
 
   def self.round(round_name)
