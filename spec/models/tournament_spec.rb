@@ -5,9 +5,4 @@ RSpec.describe Tournament, type: :model do
     expect(tournament).to be_instance_of described_class
   end
 
-  context "Associations" do
-
-    it { should have_many(:draws) }
-
-  end
 end

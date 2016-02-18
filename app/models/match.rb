@@ -49,17 +49,17 @@ class Match < ActiveRecord::Base
 
   def display_time
     begin
-      self.time.strftime(("%I:%M %p"))
+      self.time.strftime(("%-I:%M %p"))
     rescue NoMethodError
-      "10:00 AM"
+      "?"
     end
   end
 
   def display_location
     begin
-      self.location.name
+      self.location.short_letters
     rescue
-      "WI"
+      "?"
     end
   end
 

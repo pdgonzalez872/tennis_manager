@@ -8,7 +8,4 @@ RSpec.describe Location, type: :model do
     expect(location).to be_instance_of described_class
   end
 
-  context "Associations" do
-    it { should have_many(:matches) }
-  end
 end

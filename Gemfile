@@ -42,7 +42,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
 end
 
 group :development do

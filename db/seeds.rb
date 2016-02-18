@@ -1,4 +1,4 @@
-t = Tournament.create!(name: "Working Women's Paddle")
+t = Tournament.create!(name: "Weekend Women's Tournament")
 
 d = Draw.create!(name: "Main", size: 32)
 
@@ -48,7 +48,6 @@ player_hash.each do |k, v|
   d.players << player
 end
 
-
 w = Draw.create!(name: "Consolation", size: 16)
 t.draws << w
 
@@ -60,3 +59,339 @@ t.draws << w
 
 w = Draw.create!(name: "Reprieve", size: 8)
 t.draws << w
+
+# Add locations
+wsm = Location.create!(name:          'Westmoreland Country Club',
+                       address:       'address here yeah',
+                       short_letters: 'WSM')
+
+msh = Location.create!(name:          'Michigan Shores Country Club',
+                       address:       'address here yeah',
+                       short_letters: 'MSH')
+
+ns = Location.create!(name:          'North Shore Country Club',
+                      address:       'address here yeah',
+                      short_letters: 'NS')
+
+sk = Location.create!(name:          'Skokie Country Club',
+                      address:       'address here yeah',
+                      short_letters: 'SK')
+
+wn = Location.create!(name:          'Winnetka',
+                      address:       'address here yeah',
+                      short_letters: 'WN')
+
+ssr = Location.create!(name:          'Sunset Ridge Country Club',
+                       address:       'address here yeah',
+                       short_letters: 'SSR')
+# Allocation draw 1:
+draw = Draw.find(1)
+
+[16, 17].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,12,0,0)
+  match.save
+  wsm.matches << match
+end
+
+[18, 19].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,12,0,0)
+  match.save
+  msh.matches << match
+end
+
+[20, 21].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,12,0,0)
+  match.save
+  ns.matches << match
+end
+
+[22, 23].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,12,0,0)
+  match.save
+  ssr.matches << match
+end
+
+[24, 25].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,12,0,0)
+  match.save
+  sk.matches << match
+end
+
+(26..31).each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,12,0,0)
+  match.save
+  wn.matches << match
+end
+
+[8].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  wsm.matches << match
+end
+
+[9].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  msh.matches << match
+end
+
+[10].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  ns.matches << match
+end
+
+[11].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  ssr.matches << match
+end
+
+[12].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  sk.matches << match
+end
+
+(13..15).each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  wn.matches << match
+end
+
+(4..7).each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  wn.matches << match
+end
+
+(2..3).each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,16,30,0)
+  match.save
+  wn.matches << match
+end
+
+[1].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,18,0,0)
+  match.save
+  wn.matches << match
+end
+
+# Allocation draw 2:
+draw = Draw.find(2)
+
+[8].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  wsm.matches << match
+end
+
+[9].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  msh.matches << match
+end
+
+[10].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  ns.matches << match
+end
+
+[11].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  ssr.matches << match
+end
+
+[12].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  sk.matches << match
+end
+
+(13..15).each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  wn.matches << match
+end
+
+[4].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  wsm.matches << match
+end
+
+[5].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  ns.matches << match
+end
+
+[6].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  sk.matches << match
+end
+
+[7].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  sk.matches << match
+end
+
+[2].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,16,30,0)
+  match.save
+  wsm.matches << match
+end
+
+[3].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,16,30,0)
+  match.save
+  sk.matches << match
+end
+
+[1].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,18,0,0)
+  match.save
+  wn.matches << match
+end
+
+# Allocation draw 3:
+draw = Draw.find(3)
+
+[4].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  wsm.matches << match
+end
+
+[5].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  ns.matches << match
+end
+
+[6].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  ssr.matches << match
+end
+
+[7].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  ssr.matches << match
+end
+
+[2].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,16,30,0)
+  match.save
+  wn.matches << match
+end
+
+[3].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,16,30,0)
+  match.save
+  ssr.matches << match
+end
+
+[1].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,18,0,0)
+  match.save
+  wn.matches << match
+end
+
+# Allocation draw 4:
+draw = Draw.find(4)
+
+[2, 3].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,16,30,0)
+  match.save
+  wn.matches << match
+end
+
+[1].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,18,0,0)
+  match.save
+  wn.matches << match
+end
+
+# Allocation draw 5:
+draw = Draw.find(5)
+
+[4, 5].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  msh.matches << match
+end
+
+[6, 7].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  wn.matches << match
+end
+
+[2].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,16,30,0)
+  match.save
+  msh.matches << match
+end
+
+[3].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,16,30,0)
+  match.save
+  wn.matches << match
+end
+
+[1].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,18,0,0)
+  match.save
+  wn.matches << match
+end
+
+
+# d
