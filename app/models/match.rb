@@ -51,7 +51,7 @@ class Match < ActiveRecord::Base
     begin
       self.time.strftime(("%I:%M %p"))
     rescue NoMethodError
-      "10:00 AM"
+      "?"
     end
   end
 
@@ -59,7 +59,7 @@ class Match < ActiveRecord::Base
     begin
       self.location.name
     rescue
-      "WI"
+      "?"
     end
   end
 

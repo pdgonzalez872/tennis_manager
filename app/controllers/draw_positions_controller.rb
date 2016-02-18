@@ -2,8 +2,6 @@ class DrawPositionsController < ApplicationController
   def edit
     @dp             = DrawPosition.find_by(id: params[:id])
     @player_options = @dp.find_previous_match.players
-    # raise
-    # @player_options = Player.all
   end
 
   def update

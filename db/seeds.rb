@@ -48,7 +48,6 @@ player_hash.each do |k, v|
   d.players << player
 end
 
-
 w = Draw.create!(name: "Consolation", size: 16)
 t.draws << w
 
@@ -60,3 +59,26 @@ t.draws << w
 
 w = Draw.create!(name: "Reprieve", size: 8)
 t.draws << w
+
+# Add locations to the matches Draw 1
+draw = Draw.find(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# d
