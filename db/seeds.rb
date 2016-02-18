@@ -1,4 +1,4 @@
-t = Tournament.create!(name: "Working Women's Paddle")
+t = Tournament.create!(name: "Weekend Women's Tournament")
 
 d = Draw.create!(name: "Main", size: 32)
 
