@@ -13,7 +13,16 @@ class DrawPosition < ActiveRecord::Base
   end
 
   def find_previous_match
+    # self.match
+    draw = Draw.find_by(id: self.draw.id)
+    match = draw.matches.find_by(match_number: self.draw_positions_number)
 
+    # raise
+    if match.nil?
+      return "nada"
+    else
+      return match.score
+    end
   end
 
   # To fix error: find DrawPosition you want fixed, then find player, then use the below:
