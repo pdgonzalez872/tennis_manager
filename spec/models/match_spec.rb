@@ -7,9 +7,4 @@ RSpec.describe Match, type: :model do
     expect(match).to be_instance_of described_class
   end
 
-  context "Associations" do
-    it { should belong_to(:draw) }
-    it { should have_many(:draw_positions) }
-    it { should have_many(:players) }
-  end
 end

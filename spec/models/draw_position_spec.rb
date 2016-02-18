@@ -8,12 +8,6 @@ RSpec.describe DrawPosition, type: :model do
     expect(draw_position).to be_instance_of described_class
   end
 
-  context "Associations" do
-    it { should have_many(:players) }
-    it { should belong_to(:draw) }
-    it { should belong_to(:match) }
-  end
-
   context "#find_previous_match" do
     let(:current_match) {Match.new(match_number: 4)}
 
