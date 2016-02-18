@@ -41,13 +41,13 @@ class DrawPositionsController < ApplicationController
     # previous_match.update_winner_and_loser(winner: player, player_options: player_options)
     match.update_score(params[:draw_position][:score])
 
-    next_match = draw.matches.find_by(match_number: dp.match.match_number.to_i)
+    # next_match = draw.matches.find_by(match_number: dp.match.match_number.to_i)
 
     # raise
 
     # next_match = draw.matches.find_by(match_number: params[:id].to_i / 2)
-    next_match.previous_match_score = params[:draw_position][:score]
-    next_match.save
+    # next_match.previous_match_score = params[:draw_position][:score]
+    # next_match.save
 
 
     if dp.players << player

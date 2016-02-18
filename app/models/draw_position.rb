@@ -23,10 +23,6 @@ class DrawPosition < ActiveRecord::Base
     end
   end
 
-  def return_score
-
-  end
-
   def find_previous_match
     draw = Draw.find_by(id: self.draw.id)
     match = draw.matches.find_by(match_number: self.draw_positions_number)
