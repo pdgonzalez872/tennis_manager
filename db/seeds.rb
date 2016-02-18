@@ -286,7 +286,57 @@ end
   wn.matches << match
 end
 
+# Allocation draw 2:
+draw = Draw.find(3)
 
+[4].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  wsm.matches << match
+end
+
+[5].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  ns.matches << match
+end
+
+[6].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  ssr.matches << match
+end
+
+[7].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,15,0,0)
+  match.save
+  ssr.matches << match
+end
+
+[2].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,16,30,0)
+  match.save
+  wn.matches << match
+end
+
+[3].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,16,30,0)
+  match.save
+  ssr.matches << match
+end
+
+[1].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,18,0,0)
+  match.save
+  wn.matches << match
+end
 
 
 
