@@ -51,6 +51,7 @@ h3 {
 h4 {
   font-size: 24px;
   letter-spacing: 2px;
+  color: #777;
 }
 
 hr {
@@ -72,6 +73,10 @@ a:hover {
 
 li {
   color: #777;
+}
+
+a.dark-hover:hover {
+  color: #a8a3a2;
 }
 
 .back-white {
@@ -179,8 +184,8 @@ iframe {
   width: 100%;
 }
 
-.draws.a:hover {
-  color: #777;
+a.draw:hover {
+  color: #a8a3a2;
 }
 
 .clip-path {
