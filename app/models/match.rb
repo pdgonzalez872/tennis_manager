@@ -49,7 +49,7 @@ class Match < ActiveRecord::Base
 
   def display_time
     begin
-      self.time.strftime(("%-I:%M %p"))
+      self.time.strftime(("%-I:%M"))
     rescue NoMethodError
       "?"
     end

@@ -6,38 +6,38 @@ t.draws << d
 
 position_range = 32..63
 
-player_array = [ "Carlee/Sterrett",
-                 "Cunningham/Hines",
-                 "Read/Watrous",
-                 "Fyk/Huggins",
-                 "Klaeser/Weinstein",
-                 "Crane/Weitzman",
-                 "Cooper/Lemme",
-                 "Chircop/Turban",
-                 "Kenner/Perkins",
-                 "Kelly/Laing",
-                 "Roeck/Violante",
-                 "Laird/Peterson",
-                 "Christianson/Tower",
-                 "Cridland/Fleming",
-                 "Bolling/Rizzolo",
-                 "Anderson/Doyle",
-                 "Johnson/Watkins",
-                 "Montgomery/Wenzel",
-                 "Parsons/Polayes",
-                 "Davis/Williams",
-                 "Daly/Redman",
-                 "Brace/Price-Slepian",
-                 "Dickholtz/Warren",
-                 "Giesleman/Karaba",
-                 "Lambropoulos/Malles",
-                 "Chiang/Citari",
-                 "Meier/Noble",
-                 "Beall/Korniczky",
-                 "Clingan/Vajdic",
-                 "Hall/Young",
-                 "Chastain/Foster",
-                 "Padgitt/Sciortino" ]
+player_array = [ 'Laird/Watkins',
+                 'Gartzke/Schacherer',
+                 'Harris/Mallahan',
+                 'Brace/Slepian',
+                 'Chiang/Weinstein',
+                 'Bolling/Rizzolo',
+                 'Tarpo/Moriarty',
+                 'Chircop/Milling',
+                 'Feldman/Turban',
+                 'Borchew/Samson',
+                 'Daly/Redman',
+                 'Hughes/Wenzel',
+                 'Hall/Young',
+                 'Goodrich/Whipple',
+                 'Peterson/Polayes',
+                 'Anderson/Deloach',
+                 'Lurie/Perkins',
+                 'Davis/Williams',
+                 'Foley/Laing',
+                 'Montgomery/Wheeler',
+                 'Crane/Weitzman',
+                 'Cridland/Joyce',
+                 'Fyk/Huggins',
+                 'Bahr/Karaba',
+                 'Beall/Korniczky',
+                 'Keenan/Kenny',
+                 'Ash/Robinson',
+                 'Moore/Parsons',
+                 'Faurot/Seaman',
+                 'McCallum/Wascher',
+                 'Chandler/Klaeser',
+                 'Padgitt/Sciortino' ]
 
 player_hash = Hash[player_array.zip position_range]
 
@@ -61,29 +61,26 @@ w = Draw.create!(name: "Reprieve", size: 8)
 t.draws << w
 
 # Add locations
-wsm = Location.create!(name:          'Westmoreland Country Club',
-                       address:       'address here yeah',
-                       short_letters: 'WSM')
-
-msh = Location.create!(name:          'Michigan Shores Country Club',
-                       address:       'address here yeah',
-                       short_letters: 'MSH')
-
-ns = Location.create!(name:          'North Shore Country Club',
-                      address:       'address here yeah',
-                      short_letters: 'NS')
-
-sk = Location.create!(name:          'Skokie Country Club',
-                      address:       'address here yeah',
-                      short_letters: 'SK')
-
-wn = Location.create!(name:          'Winnetka',
-                      address:       'address here yeah',
-                      short_letters: 'WN')
+wn = Location.create!(name:           'Winnetka',
+                      address:        '1395 Oak St., Winnetka, IL  60093',
+                      short_letters:  'WN')
 
 ssr = Location.create!(name:          'Sunset Ridge Country Club',
-                       address:       'address here yeah',
+                       address:       '2100 Sunset Ridge Road, Northfield, IL 60093',
                        short_letters: 'SSR')
+
+gvc = Location.create!(name:          'Glen View Club',
+                      address:        '100 Golf Road, Golf, IL 60025',
+                      short_letters:  'GVC')
+
+sk = Location.create!(name:           'Skokie Country Club',
+                      address:        '701 Prairie Road, Glencoe IL',
+                      short_letters:  'SK')
+
+ga = Location.create!(name:           'Green Acres Country Club',
+                      address:        '916 Dundee Road, Northbrook, IL',
+                      short_letters:  'GA')
+
 # Allocation draw 1:
 draw = Draw.find(1)
 
@@ -91,21 +88,21 @@ draw = Draw.find(1)
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,12,0,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [18, 19].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,12,0,0)
   match.save
-  msh.matches << match
+  wn.matches << match
 end
 
 [20, 21].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,12,0,0)
   match.save
-  ns.matches << match
+  gvc.matches << match
 end
 
 [22, 23].each do |match_number|
@@ -122,7 +119,14 @@ end
   sk.matches << match
 end
 
-(26..31).each do |match_number|
+[26, 27].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,12,0,0)
+  match.save
+  ga.matches << match
+end
+
+(28..31).each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,12,0,0)
   match.save
@@ -133,21 +137,21 @@ end
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [9].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  msh.matches << match
+  wn.matches << match
 end
 
 [10].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  ns.matches << match
+  gvc.matches << match
 end
 
 [11].each do |match_number|
@@ -164,7 +168,14 @@ end
   sk.matches << match
 end
 
-(13..15).each do |match_number|
+[13].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  ga.matches << match
+end
+
+[14, 15].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
@@ -199,21 +210,21 @@ draw = Draw.find(2)
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [9].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  msh.matches << match
+  wn.matches << match
 end
 
 [10].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  ns.matches << match
+  gvc.matches << match
 end
 
 [11].each do |match_number|
@@ -230,7 +241,14 @@ end
   sk.matches << match
 end
 
-(13..15).each do |match_number|
+[13].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  ga.matches << match
+end
+
+[14, 15].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
@@ -241,14 +259,14 @@ end
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [5].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  ns.matches << match
+  gvc.matches << match
 end
 
 [6].each do |match_number|
@@ -269,7 +287,7 @@ end
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,16,30,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [3].each do |match_number|
@@ -293,14 +311,14 @@ draw = Draw.find(3)
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [5].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  ns.matches << match
+  gvc.matches << match
 end
 
 [6].each do |match_number|
@@ -362,28 +380,28 @@ draw = Draw.find(5)
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  msh.matches << match
+  wn.matches << match
 end
 
 [6, 7].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  wn.matches << match
+  ga.matches << match
 end
 
 [2].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,16,30,0)
   match.save
-  msh.matches << match
+  wn.matches << match
 end
 
 [3].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,16,30,0)
   match.save
-  wn.matches << match
+  ga.matches << match
 end
 
 [1].each do |match_number|
@@ -392,6 +410,3 @@ end
   match.save
   wn.matches << match
 end
-
-
-# d
