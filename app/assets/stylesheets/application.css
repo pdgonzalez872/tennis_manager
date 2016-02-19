@@ -26,6 +26,7 @@ html,body
 
 body {
   background-color: #f0eae8;
+  padding: 0;
 }
 
 h1,
@@ -162,6 +163,10 @@ a:hover {
 .features .glyphicon {
   font-size: 52px;
   margin: 0 auto;
+}
+
+iframe {
+  width: 100%;
 }
 
 .clip-path {
