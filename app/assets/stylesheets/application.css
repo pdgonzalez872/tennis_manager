@@ -75,6 +75,10 @@ li {
   color: #777;
 }
 
+a.bigger {
+  font-size: 32px;
+}
+
 a.dark-hover:hover {
   color: #a8a3a2;
 }
