@@ -88,21 +88,21 @@ draw = Draw.find(1)
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,12,0,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [18, 19].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,12,0,0)
   match.save
-  msh.matches << match
+  wn.matches << match
 end
 
 [20, 21].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,12,0,0)
   match.save
-  ns.matches << match
+  gvc.matches << match
 end
 
 [22, 23].each do |match_number|
@@ -116,7 +116,7 @@ end
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,12,0,0)
   match.save
-  sk.matches << match
+  ga.matches << match
 end
 
 (26..31).each do |match_number|
@@ -130,21 +130,21 @@ end
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [9].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  msh.matches << match
+  wn.matches << match
 end
 
 [10].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  ns.matches << match
+  gvc.matches << match
 end
 
 [11].each do |match_number|
@@ -161,7 +161,14 @@ end
   sk.matches << match
 end
 
-(13..15).each do |match_number|
+[13].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  ga.matches << match
+end
+
+[14, 15].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
@@ -196,21 +203,21 @@ draw = Draw.find(2)
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [9].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  msh.matches << match
+  wn.matches << match
 end
 
 [10].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  ns.matches << match
+  gvc.matches << match
 end
 
 [11].each do |match_number|
@@ -227,7 +234,14 @@ end
   sk.matches << match
 end
 
-(13..15).each do |match_number|
+[13].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,13,30,0)
+  match.save
+  sk.matches << match
+end
+
+[14, 15].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
@@ -238,14 +252,14 @@ end
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [5].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  ns.matches << match
+  gvc.matches << match
 end
 
 [6].each do |match_number|
@@ -266,7 +280,7 @@ end
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,16,30,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [3].each do |match_number|
@@ -290,14 +304,14 @@ draw = Draw.find(3)
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  wsm.matches << match
+  gvc.matches << match
 end
 
 [5].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  ns.matches << match
+  gvc.matches << match
 end
 
 [6].each do |match_number|
@@ -359,28 +373,28 @@ draw = Draw.find(5)
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  msh.matches << match
+  wn.matches << match
 end
 
 [6, 7].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,15,0,0)
   match.save
-  wn.matches << match
+  ga.matches << match
 end
 
 [2].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,16,30,0)
   match.save
-  msh.matches << match
+  wn.matches << match
 end
 
 [3].each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,16,30,0)
   match.save
-  wn.matches << match
+  ga.matches << match
 end
 
 [1].each do |match_number|
@@ -389,6 +403,3 @@ end
   match.save
   wn.matches << match
 end
-
-
-# d
