@@ -30,9 +30,9 @@
 <br>
 <br>
 
-<div class="container">
+<div class="container hidden-xs hidden-sm">
   <div class="text-center features">
-    <div class="col-centered hidden-xs hidden-sm">
+    <div class="col-centered">
       <div class="clip-path right">
         <div class="content">
           <i class='glyphicon glyphicon-knight'></i>
@@ -74,7 +74,7 @@
     <div class="clip-path-vert bottom">
       <div class="content">
         <hr>
-        <%= link_to "Tournaments", tournaments_path %>
+        <%= link_to "Tournaments", tournaments_path, class: "bigger"%>
         <hr>
       </div>
     </div>
@@ -83,14 +83,14 @@
         <br>
         <br>
         <hr class="white">
-        <%= link_to "Players", players_path, :class => "white" %>
+        <%= link_to "Players", players_path, class: "white bigger" %>
         <hr class="white">
       </div>
     </div>
     <div class="clip-path-vert top">
       <div class="content">
         <hr>
-        <%= link_to "Locations", locations_path %>
+        <%= link_to "Locations", locations_path, class: "bigger" %>
         <hr>
       </div>
     </div>
