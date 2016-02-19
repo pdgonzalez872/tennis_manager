@@ -6,38 +6,38 @@ t.draws << d
 
 position_range = 32..63
 
-player_array = [ "Carlee/Sterrett",
-                 "Cunningham/Hines",
-                 "Read/Watrous",
-                 "Fyk/Huggins",
-                 "Klaeser/Weinstein",
-                 "Crane/Weitzman",
-                 "Cooper/Lemme",
-                 "Chircop/Turban",
-                 "Kenner/Perkins",
-                 "Kelly/Laing",
-                 "Roeck/Violante",
-                 "Laird/Peterson",
-                 "Christianson/Tower",
-                 "Cridland/Fleming",
-                 "Bolling/Rizzolo",
-                 "Anderson/Doyle",
-                 "Johnson/Watkins",
-                 "Montgomery/Wenzel",
-                 "Parsons/Polayes",
-                 "Davis/Williams",
-                 "Daly/Redman",
-                 "Brace/Price-Slepian",
-                 "Dickholtz/Warren",
-                 "Giesleman/Karaba",
-                 "Lambropoulos/Malles",
-                 "Chiang/Citari",
-                 "Meier/Noble",
-                 "Beall/Korniczky",
-                 "Clingan/Vajdic",
-                 "Hall/Young",
-                 "Chastain/Foster",
-                 "Padgitt/Sciortino" ]
+player_array = [ 'Laird/Watkins',
+                 'Gartzke/Schacherer',
+                 'Harris/Mallahan',
+                 'Brace/Slepian',
+                 'Chiang/Weinstein',
+                 'Bolling/Rizzolo',
+                 'Tarpo/Moriarty',
+                 'Chircop/Milling',
+                 'Feldman/Turban',
+                 'Borchew/Samson',
+                 'Daly/Redman',
+                 'Hughes/Wenzel',
+                 'Hall/Young',
+                 'Goodrich/Whipple',
+                 'Peterson/Polayes',
+                 'Anderson/Deloach',
+                 'Lurie/Perkins',
+                 'Davis/Williams',
+                 'Foley/Laing',
+                 'Montgomery/Wheeler',
+                 'Crane/Weitzman',
+                 'Cridland/Joyce',
+                 'Fyk/Huggins',
+                 'Bahr/Karaba',
+                 'Beall/Korniczky',
+                 'Keenan/Kenny',
+                 'Ash/Robinson',
+                 'Moore/Parsons',
+                 'Faurot/Seaman',
+                 'McCallum/Wascher',
+                 'Chandler/Klaeser',
+                 'Padgitt/Sciortino' ]
 
 player_hash = Hash[player_array.zip position_range]
 
@@ -61,29 +61,26 @@ w = Draw.create!(name: "Reprieve", size: 8)
 t.draws << w
 
 # Add locations
-wsm = Location.create!(name:          'Westmoreland Country Club',
-                       address:       'address here yeah',
-                       short_letters: 'WSM')
-
-msh = Location.create!(name:          'Michigan Shores Country Club',
-                       address:       'address here yeah',
-                       short_letters: 'MSH')
-
-ns = Location.create!(name:          'North Shore Country Club',
-                      address:       'address here yeah',
-                      short_letters: 'NS')
-
-sk = Location.create!(name:          'Skokie Country Club',
-                      address:       'address here yeah',
-                      short_letters: 'SK')
-
-wn = Location.create!(name:          'Winnetka',
-                      address:       'address here yeah',
-                      short_letters: 'WN')
+wn = Location.create!(name:           'Winnetka',
+                      address:        '1395 Oak St., Winnetka, IL  60093',
+                      short_letters:  'WN')
 
 ssr = Location.create!(name:          'Sunset Ridge Country Club',
-                       address:       'address here yeah',
+                       address:       '2100 Sunset Ridge Road, Northfield, IL 60093',
                        short_letters: 'SSR')
+
+gvc = Location.create!(name:          'Glen View Club',
+                      address:        '100 Golf Road, Golf, IL 60025',
+                      short_letters:  'GVC')
+
+sk = Location.create!(name:           'Skokie Country Club',
+                      address:        '701 Prairie Road, Glencoe IL',
+                      short_letters:  'SK')
+
+ga = Location.create!(name:           'Green Acres Country Club',
+                      address:        '916 Dundee Road, Northbrook, IL',
+                      short_letters:  'GA')
+
 # Allocation draw 1:
 draw = Draw.find(1)
 
