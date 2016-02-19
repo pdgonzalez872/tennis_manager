@@ -2,7 +2,7 @@
 <h2> <%= @draw.tournament.name %> - <%= @draw.name %></h2>
 
 <br>
-  <%= link_to "Back", tournament_path(tournament_id: @draw.tournament.id, id: @draw.id), class: "dark-hover" %>
+  <%= link_to "Back", tournament_path(id: @draw.tournament.id), class: "dark-hover" %>
 <br>
 
 <main class="bracket" id="tournament">

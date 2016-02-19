@@ -116,10 +116,17 @@ end
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,12,0,0)
   match.save
+  sk.matches << match
+end
+
+[26, 27].each do |match_number|
+  match = draw.matches.find_by(match_number: match_number)
+  match.time = DateTime.new(2016,2,20,12,0,0)
+  match.save
   ga.matches << match
 end
 
-(26..31).each do |match_number|
+(28..31).each do |match_number|
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,12,0,0)
   match.save
@@ -238,7 +245,7 @@ end
   match = draw.matches.find_by(match_number: match_number)
   match.time = DateTime.new(2016,2,20,13,30,0)
   match.save
-  sk.matches << match
+  ga.matches << match
 end
 
 [14, 15].each do |match_number|
