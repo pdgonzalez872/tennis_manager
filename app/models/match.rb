@@ -25,10 +25,10 @@ class Match < ActiveRecord::Base
     self.winner_id = winner.id
     data = JSON.parse(player_options)
 
-    if winner.id == data['player1']
-      self.loser_id = data['player2']['id']
+    if winner.id == data.first['id']
+      self.loser_id = data.last['id']
     else
-      self.loser_id = data['player1']['id']
+      self.loser_id = data.first['id']
     end
     self.save
   end
