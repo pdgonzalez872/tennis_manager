@@ -1,0 +1,12 @@
+<% @locations.each do |l| %>
+  <div>
+    <h2> <%= "#{l.short_letters} - #{l.name}" %> </h2>
+  </div>
+
+  <div>
+    <h3> Address: <%= l.address %> </h3>
+  </div>
+
+  <br>
+
+<% end %>
