@@ -45,6 +45,7 @@ I enjoy solving real business problems and this is a perfect example of one. Tha
 
 ## Things I would have liked to do if we had more time, maybe for v2:
 
+### - Link to v2: [https://github.com/pdgonzalez872/paddle_tournament](https://github.com/pdgonzalez872/paddle_tournament)
 - write more tests. this was a pain, because I had to do manual testing instead. Horrible.
 - write a function that automatically places players on their subsequent draws and call the function each time until draws are all populated correctly. This was also a pain, as I had to use heroku console live to place people. Once they were on the draw, I could move them, which was fine, but placing them was annoying.
 - write the draw html/css instead of using what I pieced together online. This was great to for rapid development, but yielded an annoying, inflexible interface.
